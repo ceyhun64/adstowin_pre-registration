@@ -23,7 +23,10 @@ export default function AdsToWinPrelaunch() {
   const [userType, setUserType] = useState("viewer");
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState({
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({
     type: null,
     message: "",
   });
@@ -368,35 +371,45 @@ export default function AdsToWinPrelaunch() {
               <div className="bg-indigo-500/20 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:bg-indigo-500/30 transition-colors">
                 <Play className="w-5 h-5 md:w-6 md:h-6 text-indigo-400" />
               </div>
-              <p className="text-white text-xs md:text-sm font-semibold">Reklamlar</p>
+              <p className="text-white text-xs md:text-sm font-semibold">
+                Reklamlar
+              </p>
               <p className="text-white/50 text-xs">Normal & Premium</p>
             </div>
             <div className="text-center group hover:scale-105 transition-transform">
               <div className="bg-purple-500/20 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:bg-purple-500/30 transition-colors">
                 <Target className="w-5 h-5 md:w-6 md:h-6 text-purple-400" />
               </div>
-              <p className="text-white text-xs md:text-sm font-semibold">Şans Çarkı</p>
+              <p className="text-white text-xs md:text-sm font-semibold">
+                Şans Çarkı
+              </p>
               <p className="text-white/50 text-xs">Bonus kazanç</p>
             </div>
             <div className="text-center group hover:scale-105 transition-transform">
               <div className="bg-cyan-500/20 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:bg-cyan-500/30 transition-colors">
                 <Gift className="w-5 h-5 md:w-6 md:h-6 text-cyan-400" />
               </div>
-              <p className="text-white text-xs md:text-sm font-semibold">Ek Kazanç</p>
+              <p className="text-white text-xs md:text-sm font-semibold">
+                Ek Kazanç
+              </p>
               <p className="text-white/50 text-xs">Görevler</p>
             </div>
             <div className="text-center group hover:scale-105 transition-transform">
               <div className="bg-emerald-500/20 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:bg-emerald-500/30 transition-colors">
                 <Users className="w-5 h-5 md:w-6 md:h-6 text-emerald-400" />
               </div>
-              <p className="text-white text-xs md:text-sm font-semibold">Canlı Chat</p>
+              <p className="text-white text-xs md:text-sm font-semibold">
+                Canlı Chat
+              </p>
               <p className="text-white/50 text-xs">Topluluk</p>
             </div>
             <div className="text-center group hover:scale-105 transition-transform col-span-3 sm:col-span-1">
               <div className="bg-yellow-500/20 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mx-auto mb-2 group-hover:bg-yellow-500/30 transition-colors">
                 <Crown className="w-5 h-5 md:w-6 md:h-6 text-yellow-400" />
               </div>
-              <p className="text-white text-xs md:text-sm font-semibold">Premium</p>
+              <p className="text-white text-xs md:text-sm font-semibold">
+                Premium
+              </p>
               <p className="text-white/50 text-xs">VIP üyelik</p>
             </div>
           </div>
@@ -449,7 +462,9 @@ export default function AdsToWinPrelaunch() {
                     }`}
                   >
                     <Play className="w-5 h-5 md:w-6 md:h-6 text-cyan-400 mx-auto mb-2" />
-                    <p className="text-white font-semibold text-xs md:text-sm">İzleyici</p>
+                    <p className="text-white font-semibold text-xs md:text-sm">
+                      İzleyici
+                    </p>
                   </button>
                   <button
                     type="button"
