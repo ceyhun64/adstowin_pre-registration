@@ -1,3 +1,4 @@
+// components/home/featureCard.tsx
 "use client";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";

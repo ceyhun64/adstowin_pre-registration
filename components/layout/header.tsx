@@ -1,18 +1,17 @@
 "use client";
-import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 export default function Header() {
   return (
-    <header className="flex justify-between items-center py-4 mb-8">
-      <div className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-emerald-400">
-        KEŞFET Platformu
-      </div>
-      <Button
-        variant="outline"
-        className="bg-transparent text-white border-white hover:bg-white hover:text-gray-900"
+    <header className="w-full py-6 flex justify-center items-center relative">
+      <motion.h1
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="text-4xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-400 via-cyan-300 to-emerald-400 bg-clip-text text-transparent drop-shadow-xl select-none"
       >
-        Giriş Yap
-      </Button>
+        ADSTOWIN
+      </motion.h1>
     </header>
   );
 }
