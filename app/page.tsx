@@ -6,7 +6,7 @@ import Home from "@/components/home/home";
 // Ana Sayfa Bileşeni (Sunucu Bileşeni)
 export default function HomePage() {
   return (
-    <div className=" bg-black">
+    <div >
       <Home />
     </div>
   );
