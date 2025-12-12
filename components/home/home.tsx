@@ -356,7 +356,7 @@ export default function AdsToWinPrelaunch() {
         {/* Platform Özellikleri */}
         <div className="bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-sm rounded-2xl p-6 mb-12 border border-white/10">
           <h3 className="text-xl font-bold text-white mb-4 text-center">
-            📱 Mobil Uyumlu Platform Özellikleri
+           Mobil Uyumlu Platform Özellikleri
           </h3>
           <div className="grid sm:grid-cols-2 md:grid-cols-5 gap-4">
             <div className="text-center group hover:scale-105 transition-transform">
@@ -511,7 +511,7 @@ export default function AdsToWinPrelaunch() {
               >
                 {isSubmitting
                   ? "Kaydediliyor..."
-                  : "🚀 Erken Erişim İçin Kayıt Ol"}
+                  : "Erken Erişim İçin Kayıt Ol"}
               </button>
             </div>
 
