@@ -70,7 +70,7 @@ export default function Heyellowction({ onScrollToForm }: HeyellowctionProps) {
         <div className="flex flex-col items-center justify-center space-y-8">
           {/* Logo */}
           <div className="relative group">
-            <div className="relative w-56 h-56 md:w-150 md:h-150 flex items-center justify-center transition-all duration-500 hover:scale-105">
+            <div className="relative w-56 h-56 md:w-100 md:h-100 flex items-center justify-center transition-all duration-500 hover:scale-105">
               <Image
                 src="/logo/logotrans.png"
                 alt="ADSTOWIN Logo"
