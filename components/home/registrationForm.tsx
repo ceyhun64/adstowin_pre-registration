@@ -1,6 +1,14 @@
 "use client";
 import React, { useState } from "react";
-import { Bell, ArrowRight, Play, Target, X, DollarSign, Megaphone } from "lucide-react";
+import {
+  Bell,
+  ArrowRight,
+  Play,
+  Target,
+  X,
+  DollarSign,
+  Megaphone,
+} from "lucide-react";
 import { toast } from "sonner";
 
 interface RegistrationFormProps {
@@ -64,6 +72,8 @@ export default function RegistrationForm({
       return;
     }
 
+    setIsSubmitting(true); // ← LOADING BAŞLATILDI
+
     try {
       const res = await fetch("/api/pre-register", {
         method: "POST",
@@ -78,13 +88,13 @@ export default function RegistrationForm({
         return;
       }
 
-      toast.success(" Great! Registration successful.");
+      toast.success("Great! Registration successful.");
       setEmail("");
       setTermsAccepted(false);
     } catch {
-      toast.error(" Server error. Please try again.");
+      toast.error("Server error. Please try again.");
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false); // ← LOADING DURDURULDU
     }
   };
 
@@ -227,8 +237,7 @@ export default function RegistrationForm({
                   }`}
                 >
                   <div className="relative flex items-center justify-center gap-2 text-sm">
-                    <Megaphone className="w-6 h-6" />{" "}
-                    <span>Business</span>
+                    <Megaphone className="w-6 h-6" /> <span>Business</span>
                   </div>
                 </button>
               </div>
