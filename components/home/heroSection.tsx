@@ -48,16 +48,26 @@ export default function Heyellowction({ onScrollToForm }: HeyellowctionProps) {
         ></div>
 
         {/* Grid Lines */}
-        <div className="absolute inset-0 opacity-10">
-          {" "}
-          {/* Opaklık artırıldı */}
+        <div
+          className="absolute inset-0"
+          style={{
+            maskImage:
+              "linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)",
+          }}
+        >
+          {/* Hafif karartılmış grid yüzeyi */}
+          <div className="absolute inset-0 bg-white/2"></div>
+
+          {/* Çizgiler (biraz daha koyu) */}
           <div
-            className="absolute inset-0"
+            className="absolute inset-0 opacity-20"
             style={{
               backgroundImage: `
-                linear-gradient(to right, #ffffff 1px, transparent 1px),
-                linear-gradient(to bottom, #ffffff 1px, transparent 1px)
-              `,
+        linear-gradient(to right, rgba(255,255,255,0.18) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.18) 1px, transparent 1px)
+      `,
               backgroundSize: "80px 80px",
             }}
           ></div>

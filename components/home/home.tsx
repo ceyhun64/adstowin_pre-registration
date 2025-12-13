@@ -21,7 +21,7 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-b from-black to-black relative overflow-y-hidden font-sans">
       <FlickeringGrid
         className="absolute inset-0 z-0"
-        squareSize={50}
+        squareSize={100}
         gridGap={5}
         color="#6D6A75"
         maxOpacity={0.1}
