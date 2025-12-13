@@ -48,14 +48,14 @@ export const metadata: Metadata = {
     siteName: "AdsToWin",
     title: "AdsToWin – Pre-Registration",
     description: "Earn rewards by watching ads with AdsToWin. Register now!",
-    images: ["/og-image.jpg"],
+    images: ["https://adstowin.com/og-image.jpg"], // ✅ ABSOLUTE URL
   },
   twitter: {
     card: "summary_large_image",
     title: "AdsToWin – Pre-Registration",
     description:
       "Earn rewards by watching ads with AdsToWin. Take advantage of early registration!",
-    images: ["/og-image.jpg"],
+    images: ["https://adstowin.com/og-image.jpg"], // ✅ ABSOLUTE URL
   },
 };
 
@@ -83,6 +83,22 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+
+        {/* 🔥 MANUAL FALLBACK OG TAGS (Her platformda %100 çıkar) */}
+        <meta property="og:title" content="AdsToWin – Pre-Registration" />
+        <meta
+          property="og:description"
+          content="Earn rewards by watching ads with AdsToWin. Pre-register now!"
+        />
+        <meta property="og:image" content="https://adstowin.com/og-image.jpg" />
+        <meta property="og:url" content="https://adstowin.com" />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:image"
+          content="https://adstowin.com/og-image.jpg"
         />
 
         {/* GLOBAL FONT STYLES */}
