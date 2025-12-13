@@ -122,26 +122,43 @@ export default function UserTypeCards({
                   <div className="w-14 h-14 bg-yellow-300/20 rounded-xl flex items-center justify-center mb-4 border border-yellow-300/30">
                     <Crown className="w-7 h-7 text-yellow-400" />
                   </div>
+
                   <h3 className="text-white font-bold text-lg mb-2">
                     Wheel of Fortune
                   </h3>
 
-                  <div className="text-white/60 text-sm mb-3 space-y-1">
+                  <div className="text-white/60 text-sm mb-3 space-y-2">
                     <p>
-                       Normal Ticket:{" "}
-                      <span className="text-amber-300 font-semibold">$0.1</span>
+                      Normal Ticket Draw{" "}
+                      <span className="text-amber-300 font-semibold">
+                        (Random prize)
+                      </span>
                     </p>
+
                     <p>
-                     Premium Ticket:{" "}
+                      Premium Ticket Draw{" "}
                       <span className="text-yellow-300 font-semibold">
-                        $1.0
+                        (Higher chance)
+                      </span>
+                    </p>
+
+                    <p>
+                      Instant Win:{" "}
+                      <span className="text-green-300 font-semibold">
+                        $0.10
+                      </span>
+                    </p>
+
+                    <p>
+                      Instant Win:{" "}
+                      <span className="text-emerald-300 font-semibold">
+                        $1.00
                       </span>
                     </p>
                   </div>
 
                   <div className="flex items-center gap-2 text-yellow-400 text-xs font-semibold">
-                    <Star className="w-4 h-4" />
-                    Bonus Rewards
+                    <Star className="w-4 h-4" />4 Reward Types
                   </div>
                 </div>
 
