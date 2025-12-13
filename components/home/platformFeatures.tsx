@@ -5,50 +5,50 @@ export default function PlatformFeatures() {
   const features = [
     {
       icon: Play,
-      label: "Reklamlar",
-      desc: "Normal & Premium",
+      label: "Ads", // Reklamlar -> Ads
+      desc: "Standard & Premium", // Normal & Premium -> Standard & Premium
       color: "indigo",
-      // Neon renk: önceki componentteki Mavi/Reklam Veren teması
+      // Neon color: Blue/Advertiser theme from the previous component
       iconColor: "text-sky-400",
       bgColor: "bg-sky-500/20",
       borderColor: "border-sky-500/30 hover:border-sky-400/80",
     },
     {
       icon: Star,
-      label: "Şans Çarkı",
-      desc: "Bonus kazanç",
+      label: "Spin Wheel", // Şans Çarkı -> Spin Wheel
+      desc: "Bonus earnings", // Bonus kazanç -> Bonus earnings
       color: "yellow",
-      // Neon renk: önceki componentteki Sarı/Bonus teması
+      // Neon color: Yellow/Bonus theme from the previous component
       iconColor: "text-yellow-300",
       bgColor: "bg-yellow-400/20",
       borderColor: "border-yellow-400/30 hover:border-yellow-300/80",
     },
     {
       icon: Gift,
-      label: "Ek Kazanç",
-      desc: "Görevler",
+      label: "Extra Income", // Ek Kazanç -> Extra Income
+      desc: "Tasks", // Görevler -> Tasks
       color: "cyan",
-      // Neon renk: Yeşilimsi/Zümrüt Yeşili
+      // Neon color: Greenish/Emerald Green
       iconColor: "text-emerald-400",
       bgColor: "bg-emerald-500/20",
       borderColor: "border-emerald-500/30 hover:border-emerald-400/80",
     },
     {
       icon: Users,
-      label: "Canlı Chat",
-      desc: "Topluluk",
+      label: "Live Chat", // Canlı Chat -> Live Chat
+      desc: "Community", // Topluluk -> Community
       color: "emerald",
-      // Neon renk: Mor/Eflatun
+      // Neon color: Purple/Magenta
       iconColor: "text-purple-400",
       bgColor: "bg-purple-500/20",
       borderColor: "border-purple-500/30 hover:border-purple-400/80",
     },
     {
       icon: Crown,
-      label: "Premium",
-      desc: "VIP üyelik",
+      label: "Premium", // Premium -> Premium (Aynı kaldı)
+      desc: "VIP membership", // VIP üyelik -> VIP membership
       color: "purple",
-      // Neon renk: Pembe/Fuşya - Para Kazanan teması
+      // Neon color: Pink/Fuchsia - Earner theme
       iconColor: "text-fuchsia-400",
       bgColor: "bg-fuchsia-500/20",
       borderColor: "border-fuchsia-500/30 hover:border-fuchsia-400/80",
@@ -56,34 +56,36 @@ export default function PlatformFeatures() {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto mb-16 px-4">
+    <div className="max-w-6xl mx-auto mb-16 px-2">
       <div className="text-center mb-10">
-        <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-3">
-          ✨ Platform Özellikleri
+        <h3 className="text-2xl md:text-4xl font-extrabold text-white mb-3">
+          Platform Features
         </h3>
+        {/* Platform Özellikleri -> Platform Features */}
         <p className="text-white/60 text-lg">
-          Mobil uyumlu, tam özellikli kazanç platformu
+          Mobile-friendly, fully featured earning platform
         </p>
+        {/* Mobil uyumlu, tam özellikli kazanç platformu -> Mobile-friendly, fully featured earning platform */}
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
         {" "}
-        {/* Gap artırıldı */}
+        {/* Gap increased */}
         {features.map((feature, idx) => {
           const IconComponent = feature.icon;
           return (
             <div
               key={idx}
-              className={`group bg-white/5 backdrop-blur-md rounded-2xl p-6 border ${feature.borderColor} transition-all duration-300 hover:scale-[1.03] text-center shadow-xl shadow-black/30 hover:shadow-lg hover:shadow-white/5`}
+              className={`group bg-white/5 backdrop-blur-md rounded-2xl px-1 py-3 border ${feature.borderColor} transition-all duration-300 hover:scale-[1.03] text-center shadow-xl shadow-black/30 hover:shadow-lg hover:shadow-white/5`}
             >
-              {/* İkon Kutusu */}
+              {/* Icon Box */}
               <div
                 className={`w-16 h-16 mx-auto mb-4 ${feature.bgColor} rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform border ${feature.borderColor}`}
               >
                 <IconComponent className={`w-8 h-8 ${feature.iconColor}`} />
               </div>
 
-              {/* Etiket ve Açıklama */}
+              {/* Label and Description */}
               <p className="text-white font-extrabold text-lg mb-1">
                 {feature.label}
               </p>

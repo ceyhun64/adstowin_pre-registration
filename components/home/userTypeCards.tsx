@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import {
   Play,
   Target,
@@ -16,223 +16,251 @@ import {
   Users,
 } from "lucide-react";
 
-export default function UserTypeCards() {
-  const [userType, setUserType] = useState("viewer");
+interface UserTypeCardsProps {
+  userType: "earner" | "advertiser";
+  setUserType: (value: "earner" | "advertiser") => void;
+}
 
+export default function UserTypeCards({
+  userType,
+  setUserType,
+}: UserTypeCardsProps) {
   return (
     <div className="max-w-5xl mx-auto mb-16 px-2">
-      {" "}
-      {/* max-w-5xl eklendi */}
       {/* Tabs */}
       <div className="max-w-md mx-auto mb-12">
         <p className="text-center text-white/70 text-sm mb-4">
-          Lütfen devam etmek için kullanıcı tipinizi seçin.
+          Please select your user type to continue.
         </p>
 
         <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-2 border border-white/10">
           <div className="grid grid-cols-2 gap-2">
+            {/* EARNEEEER */}
             <button
-              onClick={() => setUserType("advertiser")} // Önce Reklam Veren butonu
+              onClick={() => setUserType("earner")}
               className={`relative py-4 px-6 rounded-xl font-semibold transition-all duration-300 ${
-                userType === "advertiser"
-                  ? "bg-gradient-to-r from-sky-500 to-indigo-600 text-white shadow-lg shadow-sky-500/30 scale-[1.02]" // Mavi/Çivit Mavi gradient, görseldeki Reklam Veren tarafı
-                  : "text-white/60 hover:text-white/80"
+                userType === "earner"
+                  ? "bg-gradient-to-r from-amber-300 to-amber-500 text-white shadow-md scale-[1.02]"
+                  : "text-white/60 hover:text-white bg-white/5"
               }`}
             >
-              {userType === "advertiser" && (
-                <div className="absolute inset-0 bg-gradient-to-r from-sky-500 to-indigo-600 rounded-xl blur-xl opacity-40"></div>
-              )}
               <div className="relative flex items-center justify-center gap-2 text-sm">
-                <Target className="w-5 h-5" />
-                <span>Reklam Veren</span>
+                <Play className="w-5 h-5" />
+                <span>Earner</span> {/* Para Kazanan -> Earner */}
               </div>
             </button>
 
+            {/* ADVERTISER */}
             <button
-              onClick={() => setUserType("viewer")} // Sonra İzleyici butonu
+              onClick={() => setUserType("advertiser")}
               className={`relative py-4 px-6 rounded-xl font-semibold transition-all duration-300 ${
-                userType === "viewer"
-                  ? "bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white shadow-lg shadow-fuchsia-500/30 scale-[1.02]" // Pembe/Fușya gradient, görseldeki Para Kazananlar tarafı
-                  : "text-white/60 hover:text-white/80"
+                userType === "advertiser"
+                  ? "bg-gradient-to-r from-sky-300 to-indigo-400 text-white shadow-md scale-[1.02]"
+                  : "text-white/60 hover:text-white bg-white/5"
               }`}
             >
-              {userType === "viewer" && (
-                <div className="absolute inset-0 bg-gradient-to-r from-fuchsia-500 to-pink-500 rounded-xl blur-xl opacity-40"></div>
-              )}
               <div className="relative flex items-center justify-center gap-2 text-sm">
-                <Play className="w-5 h-5" />
-                <span>Para Kazanan</span>
+                <Target className="w-5 h-5" />
+                <span>Advertiser</span> {/* Reklam Veren -> Advertiser */}
               </div>
             </button>
           </div>
         </div>
       </div>
+
       {/* Content Box */}
       <div className="relative">
-        {/* Neon Parlaklık */}
+        {/* Soft Aurora Background */}
         <div
-          className={`absolute inset-0 rounded-3xl blur-3xl opacity-30 ${
-            // Parlaklık artırıldı
-            userType === "viewer"
-              ? "bg-gradient-to-r from-fuchsia-500 to-pink-500" // İzleyici için Pembe neon
-              : "bg-gradient-to-r from-sky-500 to-indigo-600" // Reklam Veren için Mavi neon
+          className={`absolute inset-0 rounded-3xl blur-[55px] opacity-20 
+          ${
+            userType === "earner"
+              ? "bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-amber-200 via-amber-300 to-amber-400"
+              : "bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-sky-200 via-indigo-200 to-indigo-300"
           }`}
         ></div>
 
-        <div className="relative bg-black/40 backdrop-blur-xl rounded-3xl px-4 py-8 md:p-12 border border-white/10 shadow-2xl shadow-black/50">
-          {" "}
-          {/* Arkaplan karartıldı, border inceltildi */}
-          {userType === "viewer" ? (
+        <div className="relative bg-white/5 backdrop-blur-xl rounded-3xl px-4 py-8 md:p-12 border border-white/10 shadow-xl">
+          {userType === "earner" ? (
             <div className="space-y-8">
+              {/* HEADER */}
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-20 h-20 bg-fuchsia-500/20 rounded-2xl mb-4 border border-fuchsia-500/30">
-                  <DollarSign className="w-10 h-10 text-fuchsia-400" />
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-amber-300/20 rounded-2xl mb-4 border border-amber-300/30">
+                  <DollarSign className="w-10 h-10 text-amber-400" />
                 </div>
                 <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-3">
-                   Para Kazananlar
+                  For Earners
                 </h2>
+                {/* Para Kazananlar -> For Earners */}
                 <p className="text-white/70 text-md">
-                  Sizin için **dijital para kazanmanın yeni yolu**.
+                  The modern way to earn digital income.
                 </p>
+                {/* Dijital kazancın modern yolu. -> The modern way to earn digital income. */}
               </div>
 
               <div className="grid md:grid-cols-3 gap-6">
-                {" "}
-                {/* Gap artırıldı */}
-                <div className="bg-white/5 rounded-2xl p-6 border border-fuchsia-500/30 hover:border-fuchsia-400/80 transition-all duration-300 hover:scale-[1.02] group shadow-xl shadow-fuchsia-500/10">
-                  <div className="w-14 h-14 bg-fuchsia-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-105 transition-transform border border-fuchsia-500/30">
-                    <Eye className="w-7 h-7 text-fuchsia-400" />
+                {/* CARD 1 */}
+                <div className="bg-white/5 rounded-2xl p-6 border border-amber-300/30 transition-all duration-300 hover:scale-[1.02] hover:border-amber-400/60">
+                  <div className="w-14 h-14 bg-amber-300/20 rounded-xl flex items-center justify-center mb-4 border border-amber-300/30">
+                    <Eye className="w-7 h-7 text-amber-400" />
                   </div>
                   <h3 className="text-white font-bold text-lg mb-2">
-                    Reklam İzle, Anında Kazan!
+                    Watch Ads, Earn
                   </h3>
+                  {/* Reklam İzle, Kazan -> Watch Ads, Earn */}
                   <p className="text-white/60 text-sm mb-3">
-                    $0.01 ile $0.50 arası anlık ödeme.
+                    Instant payouts between $0.01 – $0.50.
                   </p>
-                  <div className="flex items-center gap-2 text-fuchsia-400 text-xs font-semibold">
+                  {/* $0.01 – $0.50 arası anlık ödeme. -> Instant payouts between $0.01 – $0.50. */}
+                  <div className="flex items-center gap-2 text-amber-400 text-xs font-semibold">
                     <ArrowRight className="w-4 h-4" />
-                    Hemen Başla
+                    Start Now
                   </div>
+                  {/* Hemen Başla -> Start Now */}
                 </div>
-                <div className="bg-white/5 rounded-2xl p-6 border border-yellow-400/30 hover:border-yellow-300/80 transition-all duration-300 hover:scale-[1.02] group shadow-xl shadow-yellow-500/10">
-                  <div className="w-14 h-14 bg-yellow-400/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-105 transition-transform border border-yellow-400/30">
-                    <Crown className="w-7 h-7 text-yellow-300" />
+
+                {/* CARD 2 */}
+                <div className="bg-white/5 rounded-2xl p-6 border border-yellow-300/30 transition-all duration-300 hover:scale-[1.02] hover:border-yellow-400/60">
+                  <div className="w-14 h-14 bg-yellow-300/20 rounded-xl flex items-center justify-center mb-4 border border-yellow-300/30">
+                    <Crown className="w-7 h-7 text-yellow-400" />
                   </div>
                   <h3 className="text-white font-bold text-lg mb-2">
-                    Şans Çarkını Çevir
+                    Wheel of Fortune
                   </h3>
+                  {/* Şans Çarkı -> Wheel of Fortune */}
                   <p className="text-white/60 text-sm mb-3">
-                    Ödülleri Yakala! **25x Kazanç** Şansı!
+                    Opportunity to earn up to 25x bonus.
                   </p>
-                  <div className="flex items-center gap-2 text-yellow-300 text-xs font-semibold">
+                  {/* 25x bonus kazanma fırsatı. -> Opportunity to earn up to 25x bonus. */}
+                  <div className="flex items-center gap-2 text-yellow-400 text-xs font-semibold">
                     <Star className="w-4 h-4" />
-                    Bonus Kazançlar
+                    Bonus Earnings
                   </div>
+                  {/* Bonus Kazançlar -> Bonus Earnings */}
                 </div>
-                <div className="bg-white/5 rounded-2xl p-6 border border-purple-500/30 hover:border-purple-400/80 transition-all duration-300 hover:scale-[1.02] group shadow-xl shadow-purple-500/10">
-                  <div className="w-14 h-14 bg-purple-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-105 transition-transform border border-purple-500/30">
+
+                {/* CARD 3 */}
+                <div className="bg-white/5 rounded-2xl p-6 border border-purple-300/30 transition-all duration-300 hover:scale-[1.02] hover:border-purple-400/60">
+                  <div className="w-14 h-14 bg-purple-300/20 rounded-xl flex items-center justify-center mb-4 border border-purple-300/30">
                     <Gift className="w-7 h-7 text-purple-400" />
                   </div>
                   <h3 className="text-white font-bold text-lg mb-2">
-                    Yeni Ek Kazanç Yöntemleri
+                    Additional Earning Methods
                   </h3>
+                  {/* Ek Kazanç Yöntemleri -> Additional Earning Methods */}
                   <p className="text-white/60 text-sm mb-3">
-                    NFT, Kripto ve özel görevler.
+                    Crypto, NFT, and task earnings.
                   </p>
+                  {/* Kripto, NFT ve görev kazançları. -> Crypto, NFT, and task earnings. */}
                   <div className="flex items-center gap-2 text-purple-400 text-xs font-semibold">
                     <Zap className="w-4 h-4" />
-                    VIP Avantajları
+                    VIP Advantages
                   </div>
+                  {/* VIP Avantajları -> VIP Advantages */}
                 </div>
               </div>
 
-              {/* Ekstra Bilgi - İzleyici */}
-              <div className="bg-fuchsia-500/10 rounded-xl p-4 border border-fuchsia-500/30">
+              {/* INFO */}
+              <div className="bg-amber-300/10 rounded-xl p-4 border border-amber-300/30">
                 <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-fuchsia-400 flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-amber-400" />
                   <p className="text-white/90 text-sm">
-                    <span className="font-semibold text-white">
-                      İlk 10.000 Üyeye Hediye:
+                    <span className="font-semibold">
+                      For the First 10,000 Members:
                     </span>{" "}
-                    **$10 Kripto** bonusu ve **Premium** çekiliş.
+                    $10 Crypto bonus.
                   </p>
+                  {/* İlk 10.000 Üyeye: $10 Kripto bonusu. -> For the First 10,000 Members: $10 Crypto bonus. */}
                 </div>
               </div>
             </div>
           ) : (
             <div className="space-y-8">
+              {/* HEADER */}
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-20 h-20 bg-sky-500/20 rounded-2xl mb-4 border border-sky-500/30">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-sky-300/20 rounded-2xl mb-4 border border-sky-300/30">
                   <Target className="w-10 h-10 text-sky-400" />
                 </div>
                 <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-3">
-                   Reklam Verenler
+                  For Advertisers
                 </h2>
+                {/* Reklam Verenler -> For Advertisers */}
                 <p className="text-white/70 text-md">
-                  İşinizi büyütmek için **yeni nesil reklam çözümleri**.
+                  Grow with modern advertising solutions.
                 </p>
+                {/* Modern reklam çözümleri ile büyüyün. -> Grow with modern advertising solutions. */}
               </div>
 
               <div className="grid md:grid-cols-3 gap-6">
-                {" "}
-                {/* Gap artırıldı */}
-                <div className="bg-white/5 rounded-2xl p-6 border border-sky-500/30 hover:border-sky-400/80 transition-all duration-300 hover:scale-[1.02] group shadow-xl shadow-sky-500/10">
-                  <div className="w-14 h-14 bg-sky-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-105 transition-transform border border-sky-500/30">
+                {/* CARD 1 */}
+                <div className="bg-white/5 rounded-2xl p-6 border border-sky-300/30 transition-all duration-300 hover:scale-[1.02] hover:border-sky-400/60">
+                  <div className="w-14 h-14 bg-sky-300/20 rounded-xl flex items-center justify-center mb-4 border border-sky-300/30">
                     <TrendingUp className="w-7 h-7 text-sky-400" />
                   </div>
                   <h3 className="text-white font-bold text-lg mb-2">
-                    Standart Reklam Çözümleri
+                    Standard Ads
                   </h3>
+                  {/* Standart Reklamlar -> Standard Ads */}
                   <p className="text-white/60 text-sm mb-3">
-                    İçerik içi (in-content) veya **video reklam** seçeneği.
+                    In-content or video ad options.
                   </p>
+                  {/* In-content veya video reklam seçenekleri. -> In-content or video ad options. */}
                   <div className="flex items-center gap-2 text-sky-400 text-xs font-semibold">
                     <ArrowRight className="w-4 h-4" />
-                    Kampanya Başlat
+                    Launch Campaign
                   </div>
+                  {/* Kampanya Başlat -> Launch Campaign */}
                 </div>
-                <div className="bg-white/5 rounded-2xl p-6 border border-yellow-400/30 hover:border-yellow-300/80 transition-all duration-300 hover:scale-[1.02] group shadow-xl shadow-yellow-500/10">
-                  <div className="w-14 h-14 bg-yellow-400/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-105 transition-transform border border-yellow-400/30">
-                    <Sparkles className="w-7 h-7 text-yellow-300" />
+
+                {/* CARD 2 */}
+                <div className="bg-white/5 rounded-2xl p-6 border border-indigo-300/30 transition-all duration-300 hover:scale-[1.02] hover:border-indigo-400/60">
+                  <div className="w-14 h-14 bg-indigo-300/20 rounded-xl flex items-center justify-center mb-4 border border-indigo-300/30">
+                    <Sparkles className="w-7 h-7 text-indigo-300" />
                   </div>
                   <h3 className="text-white font-bold text-lg mb-2">
-                    Premium Reklamlar
+                    Premium Ads
                   </h3>
+                  {/* Premium Reklamlar -> Premium Ads */}
                   <p className="text-white/60 text-sm mb-3">
-                    %100 garantili gösterim: **Hedef kitle odaklı**.
+                    100% guaranteed impressions.
                   </p>
-                  <div className="flex items-center gap-2 text-yellow-300 text-xs font-semibold">
+                  {/* %100 garantili gösterim. -> 100% guaranteed impressions. */}
+                  <div className="flex items-center gap-2 text-indigo-300 text-xs font-semibold">
                     <Star className="w-4 h-4" />
-                    Yüksek Dönüşüm
+                    High Conversion
                   </div>
+                  {/* Yüksek Dönüşüm -> High Conversion */}
                 </div>
-                <div className="bg-white/5 rounded-2xl p-6 border border-emerald-500/30 hover:border-emerald-400/80 transition-all duration-300 hover:scale-[1.02] group shadow-xl shadow-emerald-500/10">
-                  <div className="w-14 h-14 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-105 transition-transform border border-emerald-500/30">
-                    <Users className="w-7 h-7 text-emerald-400" />
+
+                {/* CARD 3 */}
+                <div className="bg-white/5 rounded-2xl p-6 border border-emerald-300/30 transition-all duration-300 hover:scale-[1.02] hover:border-emerald-400/60">
+                  <div className="w-14 h-14 bg-emerald-300/20 rounded-xl flex items-center justify-center mb-4 border border-emerald-300/30">
+                    <Users className="w-7 h-7 text-emerald-300" />
                   </div>
                   <h3 className="text-white font-bold text-lg mb-2">
-                    Düşük Maliyetli Başlangıç
+                    Low-Cost Start
                   </h3>
+                  {/* Düşük Maliyetli Başlangıç -> Low-Cost Start */}
                   <p className="text-white/60 text-sm mb-3">
-                    Minimum bütçe ile hemen başlayın: **$50 Bütçe**.
+                    Quick start with a minimum $50 budget.
                   </p>
-                  <div className="flex items-center gap-2 text-emerald-400 text-xs font-semibold">
+                  {/* Minimum $50 bütçe ile hızlı başlangıç. -> Quick start with a minimum $50 budget. */}
+                  <div className="flex items-center gap-2 text-emerald-300 text-xs font-semibold">
                     <Zap className="w-4 h-4" />
-                    Akıllı Hedefleme
+                    Smart Targeting
                   </div>
+                  {/* Akıllı Hedefleme -> Smart Targeting */}
                 </div>
               </div>
 
-              {/* Ekstra Bilgi - Reklam Veren */}
-              <div className="bg-sky-500/10 rounded-xl p-4 border border-sky-500/30">
+              {/* INFO */}
+              <div className="bg-sky-300/10 rounded-xl p-4 border border-sky-300/30">
                 <div className="flex items-center gap-3">
-                  <Eye className="w-5 h-5 text-sky-400 flex-shrink-0" />
+                  <Eye className="w-5 h-5 text-sky-400" />
                   <p className="text-white/90 text-sm">
-                    <span className="font-semibold text-white">
-                      Reklam Paketi:
-                    </span>{" "}
-                    İlk reklamınızda **%20 ekstra gösterim** hediyesi.
+                    20% extra impressions on the first ad.
                   </p>
+                  {/* İlk reklamda %20 ekstra gösterim. -> 20% extra impressions on the first ad. */}
                 </div>
               </div>
             </div>
