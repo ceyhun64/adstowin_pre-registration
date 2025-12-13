@@ -18,7 +18,7 @@ const bodyFont = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://adstowin.com"),
+  metadataBase: new URL("https://adstowin-pre-registration.vercel.app/"),
 
   title: "AdsToWin – Pre-Registration | Earn Rewards From Ads",
   description:
@@ -40,23 +40,23 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://adstowin.com",
+    canonical: "https://adstowin-pre-registration.vercel.app/",
   },
   openGraph: {
     type: "website",
     locale: "en_EN",
-    url: "https://adstowin.com",
+    url: "https://adstowin-pre-registration.vercel.app/",
     siteName: "AdsToWin",
     title: "AdsToWin – Pre-Registration",
     description: "Earn rewards by watching ads with AdsToWin. Register now!",
-    images: ["https://adstowin.com/og-image.jpg"], // ✅ ABSOLUTE URL
+    images: ["https://adstowin-pre-registration.vercel.app//og-image.jpg"], // ✅ ABSOLUTE URL
   },
   twitter: {
     card: "summary_large_image",
     title: "AdsToWin – Pre-Registration",
     description:
       "Earn rewards by watching ads with AdsToWin. Take advantage of early registration!",
-    images: ["https://adstowin.com/og-image.jpg"], // ✅ ABSOLUTE URL
+    images: ["https://adstowin-pre-registration.vercel.app//og-image.jpg"], // ✅ ABSOLUTE URL
   },
 };
 
@@ -69,10 +69,10 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "AdsToWin",
-    url: "https://adstowin.com",
+    url: "https://adstowin-pre-registration.vercel.app/",
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://adstowin.com/search?q={search_term_string}",
+      target: "https://adstowin-pre-registration.vercel.app//search?q={search_term_string}",
       "query-input": "required name=search_term_string",
     },
   };
@@ -92,18 +92,18 @@ export default function RootLayout({
           property="og:description"
           content="Earn rewards by watching ads with AdsToWin. Pre-register now!"
         />
-        <meta property="og:image" content="https://adstowin.com/og-image.jpg" />
+        <meta property="og:image" content="https://adstowin-pre-registration.vercel.app//og-image.jpg" />
         {/* 🔥 WHATSAPP İÇİN YENİ EKLENEN BOYUT ETİKETLERİ */}
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         {/* 🔥 WHATSAPP İÇİN YENİ EKLENEN BOYUT ETİKETLERİ */}
-        <meta property="og:url" content="https://adstowin.com" />
+        <meta property="og:url" content="https://adstowin-pre-registration.vercel.app/" />
         <meta property="og:type" content="website" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:image"
-          content="https://adstowin.com/og-image.jpg"
+          content="https://adstowin-pre-registration.vercel.app//og-image.jpg"
         />
 
         {/* GLOBAL FONT STYLES */}
