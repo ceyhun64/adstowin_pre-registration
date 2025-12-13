@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://adstowin.com"),
   title: "AdsToWin – Pre-Registration | Earn Rewards From Ads",
   description:
-    "AdsToWin ile reklam izleyerek ödüller kazanın. Şimdi ön kayıt olun ve erken erişim avantajlarını yakalayın!",
+    "Earn rewards by watching ads with AdsToWin. Pre-register now and grab the early access benefits!", // Çeviri: "AdsToWin ile reklam izleyerek ödüller kazanın. Şimdi ön kayıt olun ve erken erişim avantajlarını yakalayın!"
   keywords: [
     "AdsToWin",
     "ad rewards",
@@ -43,22 +43,15 @@ export const metadata: Metadata = {
     url: "https://adstowin.com",
     siteName: "AdsToWin",
     title: "AdsToWin – Pre-Registration",
-    description:
-      "AdsToWin ile reklam izleyerek ödüller kazanın. Hemen ön kayıt olun!",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "AdsToWin Pre-Registration",
-      },
-    ],
+    description: "Earn rewards by watching ads with AdsToWin. Register now!", // Çeviri: "AdsToWin ile reklam izleyerek ödüller kazanın. Hemen ön kayıt olun!"
+    images: ["/og-image.jpg"],
+     
   },
   twitter: {
     card: "summary_large_image",
     title: "AdsToWin – Pre-Registration",
     description:
-      "AdsToWin ile reklam izleyerek ödüller kazanın. Erken kayıt avantajlarından yararlan!",
+      "Earn rewards by watching ads with AdsToWin. Take advantage of early registration!", // Çeviri: "AdsToWin ile reklam izleyerek ödüller kazanın. Erken kayıt avantajlarından yararlan!"
     images: ["/og-image.jpg"],
   },
 };
