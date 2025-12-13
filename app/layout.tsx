@@ -1,23 +1,27 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// FONTS
+import { Orbitron, Space_Grotesk } from "next/font/google";
+
+const mainFont = Orbitron({
   subsets: ["latin"],
+  variable: "--font-main",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const bodyFont = Space_Grotesk({
   subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://adstowin.com"),
   title: "AdsToWin – Pre-Registration | Earn Rewards From Ads",
   description:
-    "Earn rewards by watching ads with AdsToWin. Pre-register now and grab the early access benefits!", // Çeviri: "AdsToWin ile reklam izleyerek ödüller kazanın. Şimdi ön kayıt olun ve erken erişim avantajlarını yakalayın!"
+    "Earn rewards by watching ads with AdsToWin. Pre-register now and grab the early access benefits!",
   keywords: [
     "AdsToWin",
     "ad rewards",
@@ -43,15 +47,14 @@ export const metadata: Metadata = {
     url: "https://adstowin.com",
     siteName: "AdsToWin",
     title: "AdsToWin – Pre-Registration",
-    description: "Earn rewards by watching ads with AdsToWin. Register now!", // Çeviri: "AdsToWin ile reklam izleyerek ödüller kazanın. Hemen ön kayıt olun!"
+    description: "Earn rewards by watching ads with AdsToWin. Register now!",
     images: ["/og-image.jpg"],
-     
   },
   twitter: {
     card: "summary_large_image",
     title: "AdsToWin – Pre-Registration",
     description:
-      "Earn rewards by watching ads with AdsToWin. Take advantage of early registration!", // Çeviri: "AdsToWin ile reklam izleyerek ödüller kazanın. Erken kayıt avantajlarından yararlan!"
+      "Earn rewards by watching ads with AdsToWin. Take advantage of early registration!",
     images: ["/og-image.jpg"],
   },
 };
@@ -74,23 +77,42 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className={`${mainFont.variable} ${bodyFont.variable}`}>
       <head>
-        {/* JSON-LD Structured Data */}
+        {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+
+        {/* GLOBAL FONT STYLES */}
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              body {
+                font-family: var(--font-body), system-ui, sans-serif;
+              }
+              
+              h1, h2, h3, h4, h5, h6,
+              button, .font-main {
+                font-family: var(--font-main), system-ui, sans-serif;
+                letter-spacing: 0.02em;
+                font-weight: 700;
+              }
+            `,
+          }}
+        />
       </head>
 
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body>
         {children}
+
         <Toaster
           richColors
           position="bottom-right"
-          toastOptions={{ style: { zIndex: 9999 } }}
+          toastOptions={{
+            style: { zIndex: 999999 },
+          }}
         />
       </body>
     </html>

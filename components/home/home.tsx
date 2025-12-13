@@ -38,7 +38,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full blur-xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
               <div className="relative bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border-2 border-yellow-500/50 rounded-full px-6 md:px-8 py-3 backdrop-blur-sm">
                 <p className="text-yellow-300 font-bold text-sm md:text-base flex items-center gap-3">
-                  YAKINDA YAYINDA
+                  COMING SOON
                 </p>
               </div>
             </div>

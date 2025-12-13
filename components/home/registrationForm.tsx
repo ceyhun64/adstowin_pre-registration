@@ -299,7 +299,7 @@ export default function RegistrationForm({
               }
               hover:scale-[1.02] disabled:opacity-50`}
             >
-              <span className="relative flex items-center justify-center gap-2">
+              <span className="relative flex items-center justify-center gap-2 text-sm">
                 {isSubmitting ? (
                   <>
                     <div className="w-5 h-5 border-2 border-white/20 border-t-white rounded-full animate-spin" />

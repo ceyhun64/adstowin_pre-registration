@@ -109,11 +109,11 @@ export default function Heyellowction({ onScrollToForm }: HeyellowctionProps) {
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-8">
           {/* Title */}
           <div className="space-y-2">
-            <h1 className="font-black leading-[0.85] tracking-tight">
-              <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] bg-gradient-to-r from-amber-500 via-orange-400 to-yellow-400 bg-clip-text text-transparent">
+            <h1 className="font-black leading-[0.85] tracking-tight font-mono">
+              <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-[6rem] bg-gradient-to-r from-amber-500 via-orange-400 to-yellow-400 bg-clip-text text-transparent">
                 WATCH
               </span>
-              <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-400 bg-clip-text text-transparent">
+              <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-[6rem] bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-400 bg-clip-text text-transparent">
                 EARN
               </span>
             </h1>
