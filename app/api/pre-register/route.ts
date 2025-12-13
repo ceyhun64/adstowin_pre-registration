@@ -5,56 +5,54 @@ import PreRegistration from "@/models/PreRegistration";
 
 export async function POST(request: NextRequest) {
   try {
-    // MongoDB'ye bağlan
+    // Connect to MongoDB
     await connectDB();
 
-    // Request body'yi parse et
+    // Parse request body
     const body = await request.json();
     const { email, userType } = body;
 
-    // Validasyon
+    // Validation
     if (!email || !userType) {
       return NextResponse.json(
-        { error: "E-posta ve kullanıcı tipi gereklidir" },
+        { error: "Email and user type are required" },
         { status: 400 }
       );
     }
 
-    // E-posta formatı kontrolü
+    // Email format validation
     const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json(
-        { error: "Geçerli bir e-posta adresi giriniz" },
+        { error: "Please enter a valid email address" },
         { status: 400 }
       );
     }
 
-    // User type kontrolü
+    // User type validation
     if (!["business", "earner"].includes(userType)) {
-      return NextResponse.json(
-        { error: "Geçersiz kullanıcı tipi" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Invalid user type" }, { status: 400 });
     }
 
-    // IP adresi ve User Agent bilgilerini al
+    // Get IP Address and User Agent
     const ipAddress =
       request.headers.get("x-forwarded-for") ||
       request.headers.get("x-real-ip") ||
       "unknown";
+
     const userAgent = request.headers.get("user-agent") || "unknown";
 
-    // Aynı e-posta ile daha önce kayıt olup olmadığını kontrol et
+    // Check for existing registration with same email
     const existingRegistration = await PreRegistration.findOne({ email });
 
     if (existingRegistration) {
       return NextResponse.json(
-        { error: "Bu e-posta adresi ile daha önce kayıt olunmuş" },
+        { error: "This email has already been registered" },
         { status: 409 }
       );
     }
 
-    // Yeni kayıt oluştur
+    // Create new registration
     const preRegistration = await PreRegistration.create({
       email,
       userType,
@@ -65,7 +63,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         success: true,
-        message: "Kayıt başarıyla tamamlandı",
+        message: "Registration completed successfully",
         data: {
           id: preRegistration._id,
           email: preRegistration.email,
@@ -78,50 +76,51 @@ export async function POST(request: NextRequest) {
   } catch (error: any) {
     console.error("Pre-registration error:", error);
 
-    // Mongoose validation hatası
+    // Mongoose validation error
     if (error.name === "ValidationError") {
       return NextResponse.json(
-        { error: "Geçersiz veri formatı", details: error.message },
+        { error: "Invalid data format", details: error.message },
         { status: 400 }
       );
     }
 
-    // Duplicate key hatası (e-posta zaten var)
+    // Duplicate key error (email already exists)
     if (error.code === 11000) {
       return NextResponse.json(
-        { error: "Bu e-posta adresi ile daha önce kayıt olunmuş" },
+        { error: "This email has already been registered" },
         { status: 409 }
       );
     }
 
     return NextResponse.json(
-      { error: "Sunucu hatası. Lütfen daha sonra tekrar deneyin." },
+      { error: "Server error. Please try again later." },
       { status: 500 }
     );
   }
 }
 
-// GET endpoint - istatistikler için (opsiyonel)
+// GET endpoint - optional statistics
 export async function GET(request: NextRequest) {
   try {
     await connectDB();
 
-    // URL'den query parametrelerini al
+    // Get query params
     const searchParams = request.nextUrl.searchParams;
     const userType = searchParams.get("userType");
 
-    // Toplam kayıt sayısı
+    // Total registrations
     const totalCount = await PreRegistration.countDocuments();
 
-    // Kullanıcı tipine göre sayılar
+    // Count by user type
     const businessCount = await PreRegistration.countDocuments({
       userType: "business",
     });
+
     const earnerCount = await PreRegistration.countDocuments({
       userType: "earner",
     });
 
-    // Eğer userType parametresi varsa, sadece o tipteki kayıtları getir
+    // If userType param is provided, return filtered registrations
     if (userType && ["business", "earner"].includes(userType)) {
       const registrations = await PreRegistration.find({ userType })
         .select("email userType registeredAt status")
@@ -135,19 +134,19 @@ export async function GET(request: NextRequest) {
       });
     }
 
-    // Genel istatistikler
+    // General statistics
     return NextResponse.json({
       success: true,
       stats: {
         total: totalCount,
-        businesss: businessCount,
+        business: businessCount,
         earners: earnerCount,
       },
     });
   } catch (error) {
     console.error("Get pre-registrations error:", error);
     return NextResponse.json(
-      { error: "İstatistikler alınırken bir hata oluştu" },
+      { error: "An error occurred while fetching statistics" },
       { status: 500 }
     );
   }
