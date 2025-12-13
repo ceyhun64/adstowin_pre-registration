@@ -19,6 +19,7 @@ const bodyFont = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://adstowin.com"),
+
   title: "AdsToWin – Pre-Registration | Earn Rewards From Ads",
   description:
     "Earn rewards by watching ads with AdsToWin. Pre-register now and grab the early access benefits!",
@@ -92,6 +93,10 @@ export default function RootLayout({
           content="Earn rewards by watching ads with AdsToWin. Pre-register now!"
         />
         <meta property="og:image" content="https://adstowin.com/og-image.jpg" />
+        {/* 🔥 WHATSAPP İÇİN YENİ EKLENEN BOYUT ETİKETLERİ */}
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        {/* 🔥 WHATSAPP İÇİN YENİ EKLENEN BOYUT ETİKETLERİ */}
         <meta property="og:url" content="https://adstowin.com" />
         <meta property="og:type" content="website" />
 
