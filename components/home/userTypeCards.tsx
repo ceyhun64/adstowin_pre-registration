@@ -263,7 +263,7 @@ export default function UserTypeCards({
                   </h3>
 
                   <p className="text-white/60 text-sm mb-3">
-                    Begin with a minimum $50 budget.
+                    Begin with a minimum $5 budget.
                   </p>
                   <div className="flex items-center gap-2 text-emerald-300 text-xs font-semibold">
                     <Zap className="w-4 h-4" />
