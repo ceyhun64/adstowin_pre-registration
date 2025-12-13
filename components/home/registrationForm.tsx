@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Bell, ArrowRight, Play, Target, X } from "lucide-react";
+import { Bell, ArrowRight, Play, Target, X, DollarSign, Megaphone } from "lucide-react";
 import { toast } from "sonner";
 
 interface RegistrationFormProps {
@@ -202,6 +202,7 @@ export default function RegistrationForm({
             </label>
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-2 border border-white/10">
               <div className="grid grid-cols-2 gap-2">
+                {/* Money Earner */}
                 <button
                   onClick={() => setUserType("earner")}
                   className={`relative py-4 px-6 rounded-xl font-semibold transition-all duration-300 ${
@@ -211,20 +212,22 @@ export default function RegistrationForm({
                   }`}
                 >
                   <div className="relative flex items-center justify-center gap-2 text-sm">
-                    <Play className="w-5 h-5" />
+                    <DollarSign className="w-5 h-5" />
                     <span>Money Earner</span>
                   </div>
                 </button>
+
+                {/* Advertiser */}
                 <button
                   onClick={() => setUserType("advertiser")}
                   className={`relative py-4 px-6 rounded-xl font-semibold transition-all duration-300 ${
                     userType === "advertiser"
-                      ? "bg-gradient-to-r from-sky-400 to-cyan-400 text-white shadow-md scale-[1.02]" // shadow-md EKLENDİ, parlaklığa uygun renkler ayarlandı
+                      ? "bg-gradient-to-r from-blue-400 to-sky-500 text-white shadow-md scale-[1.02]"
                       : "text-white/60 hover:text-white bg-white/5"
                   }`}
                 >
                   <div className="relative flex items-center justify-center gap-2 text-sm">
-                    <Target className="w-5 h-5" />
+                    <Megaphone className="w-6 h-6" />{" "}
                     <span>Advertiser</span>
                   </div>
                 </button>
@@ -282,19 +285,6 @@ export default function RegistrationForm({
                 I accept.
               </label>
             </div>
-
-            {/* MESSAGE (Değişiklik Yok) */}
-            {message && (
-              <div className="text-center text-sm font-semibold">
-                <p
-                  className={
-                    message.startsWith("✅") ? "text-green-400" : "text-red-400"
-                  }
-                >
-                  {message}
-                </p>
-              </div>
-            )}
 
             {/* SUBMIT BUTTON (GÜNCELLENDİ) */}
             <button
