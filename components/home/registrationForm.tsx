@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Bell, ArrowRight, Play, Target, X } from "lucide-react";
+import { toast } from "sonner";
 
 interface RegistrationFormProps {
   userType: "earner" | "advertiser";
@@ -55,18 +56,13 @@ export default function RegistrationForm({
 
   const handleSubmit = async () => {
     if (!termsAccepted) {
-      // Çeviri: "❌ Lütfen kullanım şartlarını onaylayın."
-      setMessage("❌ Please accept the terms of use.");
+      toast.error("Please accept the terms of use.");
       return;
     }
     if (!email || !/\S+@\S+\.\S+/.test(email)) {
-      // Çeviri: "❌ Lütfen geçerli bir e-posta adresi girin."
-      setMessage("❌ Please enter a valid email address.");
+      toast.error("Please enter a valid email address.");
       return;
     }
-
-    setIsSubmitting(true);
-    setMessage("");
 
     try {
       const res = await fetch("/api/pre-register", {
@@ -78,18 +74,15 @@ export default function RegistrationForm({
       const data = await res.json();
 
       if (!res.ok) {
-        // Çeviri: "❌ " + (data.error || "Bir hata oluştu.")
-        setMessage("❌ " + (data.error || "An error occurred."));
+        toast.error(data.error || "An error occurred.");
         return;
       }
 
-      // Çeviri: "✅ Harika! Kayıt başarılı."
-      setMessage("✅ Great! Registration successful.");
+      toast.success(" Great! Registration successful.");
       setEmail("");
       setTermsAccepted(false);
     } catch {
-      // Çeviri: "❌ Sunucu hatası. Lütfen tekrar deneyin."
-      setMessage("❌ Server error. Please try again.");
+      toast.error(" Server error. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
