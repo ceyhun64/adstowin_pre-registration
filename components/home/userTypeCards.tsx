@@ -143,7 +143,7 @@ export default function UserTypeCards({
                     Extra Earning Methods
                   </h3>
                   <p className="text-white/60 text-sm mb-3">
-                    Crypto, NFT, and task rewards.
+                    Installing Applications etc.
                   </p>
                   <div className="flex items-center gap-2 text-purple-400 text-xs font-semibold">
                     <Zap className="w-4 h-4" />

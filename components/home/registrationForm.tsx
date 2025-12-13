@@ -4,8 +4,8 @@ import { Bell, ArrowRight, Play, Target, X, DollarSign, Megaphone } from "lucide
 import { toast } from "sonner";
 
 interface RegistrationFormProps {
-  userType: "earner" | "advertiser";
-  setUserType: (value: "earner" | "advertiser") => void;
+  userType: "earner" | "business";
+  setUserType: (value: "earner" | "business") => void;
 }
 
 // Yeni Modal Bileşeni (Değişiklik Yok)
@@ -219,16 +219,16 @@ export default function RegistrationForm({
 
                 {/* Advertiser */}
                 <button
-                  onClick={() => setUserType("advertiser")}
+                  onClick={() => setUserType("business")}
                   className={`relative py-4 px-6 rounded-xl font-semibold transition-all duration-300 ${
-                    userType === "advertiser"
+                    userType === "business"
                       ? "bg-gradient-to-r from-blue-400 to-sky-500 text-white shadow-md scale-[1.02]"
                       : "text-white/60 hover:text-white bg-white/5"
                   }`}
                 >
                   <div className="relative flex items-center justify-center gap-2 text-sm">
                     <Megaphone className="w-6 h-6" />{" "}
-                    <span>Advertiser</span>
+                    <span>Business</span>
                   </div>
                 </button>
               </div>

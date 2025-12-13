@@ -30,7 +30,7 @@ export async function POST(request: NextRequest) {
     }
 
     // User type kontrolü
-    if (!["advertiser", "earner"].includes(userType)) {
+    if (!["business", "earner"].includes(userType)) {
       return NextResponse.json(
         { error: "Geçersiz kullanıcı tipi" },
         { status: 400 }
@@ -114,15 +114,15 @@ export async function GET(request: NextRequest) {
     const totalCount = await PreRegistration.countDocuments();
 
     // Kullanıcı tipine göre sayılar
-    const advertiserCount = await PreRegistration.countDocuments({
-      userType: "advertiser",
+    const businessCount = await PreRegistration.countDocuments({
+      userType: "business",
     });
     const earnerCount = await PreRegistration.countDocuments({
       userType: "earner",
     });
 
     // Eğer userType parametresi varsa, sadece o tipteki kayıtları getir
-    if (userType && ["advertiser", "earner"].includes(userType)) {
+    if (userType && ["business", "earner"].includes(userType)) {
       const registrations = await PreRegistration.find({ userType })
         .select("email userType registeredAt status")
         .sort({ registeredAt: -1 })
@@ -140,7 +140,7 @@ export async function GET(request: NextRequest) {
       success: true,
       stats: {
         total: totalCount,
-        advertisers: advertiserCount,
+        businesss: businessCount,
         earners: earnerCount,
       },
     });

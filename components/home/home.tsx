@@ -8,7 +8,7 @@ import RegistrationForm from "@/components/home/registrationForm";
 import { FlickeringGrid } from "../ui/shadcn-io/flickering-grid";
 
 export default function Home() {
-  const [userType, setUserType] = useState<"earner" | "advertiser">("earner");
+  const [userType, setUserType] = useState<"earner" | "business">("earner");
 
   const handleScrollToForm = () => {
     const formElement = document.getElementById("registration-form");
