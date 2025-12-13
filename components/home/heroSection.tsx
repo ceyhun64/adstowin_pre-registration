@@ -41,18 +41,7 @@ export default function Heyellowction({ onScrollToForm }: HeyellowctionProps) {
       {/* Background Effects */}
       <div className="absolute inset-0 z-0">
         {/* Gradient Spheres */}
-        <div
-          className="absolute top-[10%] left-[15%] w-[500px] h-[500px] 
-          bg-gradient-to-br from-amber-500/20 to-yellow-500/10 
-          rounded-full mix-blend-screen filter blur-[80px] animate-float"
-        ></div>
-
-        <div
-          className="absolute bottom-[10%] right-[15%] w-[500px] h-[500px] 
-          bg-gradient-to-br from-yellow-400/20 to-amber-400/10 
-          rounded-full mix-blend-screen filter blur-[80px] animate-float-delayed"
-        ></div>
-
+      
         <div
           className="absolute top-[50%] left-[50%] w-[350px] h-[350px] 
           -translate-x-1/2 -translate-y-1/2 
