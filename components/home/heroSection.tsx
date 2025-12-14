@@ -1,13 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import {
-  Play,
-  TrendingUp,
   Sparkles,
   ArrowRight,
   ShieldCheck,
   Zap,
-  Users,
   Award,
   CheckCircle2,
 } from "lucide-react";
@@ -17,7 +14,7 @@ interface HeyellowctionProps {
   onScrollToForm: () => void;
 }
 
-export default function Heyellowction({ onScrollToForm }: HeyellowctionProps) {
+export default function Heroes({ onScrollToForm }: HeyellowctionProps) {
   const [registeredCount, setRegisteredCount] = useState(1247);
   const [animationPhase, setAnimationPhase] = useState(0);
 

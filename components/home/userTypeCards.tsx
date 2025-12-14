@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import {
   Play,
   Target,
@@ -374,18 +373,12 @@ export default function UserTypeCards({
                   {/* CTA */}
                   <button className="w-full mt-2 mb-4 px-4 bg-gradient-to-r from-sky-400 to-indigo-500 text-white font-semibold py-3 rounded-xl flex items-center justify-center gap-2 hover:scale-[1.02] transition-all">
                     Launch Ad Now – Catch the Pre-Registration Opportunity
-                    <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
 
-                <div className="flex items-center gap-3">
-                  <Eye className="w-5 h-5 text-sky-400" />
-                  <p className="text-white/90 text-sm">
-                    20% extra visibility on your first spot.
-                  </p>
-                </div>
+              
                 {/* SAFE PRE-REG INFO - BUSINESS */}
-                <div className="bg-white/5 rounded-xl p-4 border border-white/10 space-y-3 mt-4">
+                <div className="bg-white/5 rounded-xl p-4 border border-white/10 space-y-3 mt-4 mb-4">
                   {/* Block 1 */}
                   <div className="flex items-center gap-3">
                     <CheckCircle2 className="w-5 h-5 text-white/70" />
@@ -408,6 +401,12 @@ export default function UserTypeCards({
                       Gifts close when the quota is full.
                     </p>
                   </div>
+                </div>
+                  <div className="flex items-center gap-3">
+                  <Eye className="w-5 h-5 text-sky-400" />
+                  <p className="text-white/90 text-sm">
+                    20% extra visibility on your first spot.
+                  </p>
                 </div>
               </div>
             </div>
