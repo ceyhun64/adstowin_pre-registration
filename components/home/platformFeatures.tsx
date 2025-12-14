@@ -8,7 +8,6 @@ export default function PlatformFeatures() {
       label: "Ads", // Reklamlar -> Ads
       desc: "Standard & Premium", // Normal & Premium -> Standard & Premium
       color: "indigo",
-      // Neon color: Blue/Advertiser theme from the previous component
       iconColor: "text-sky-400",
       bgColor: "bg-sky-500/20",
       borderColor: "border-sky-500/30 hover:border-sky-400/80",

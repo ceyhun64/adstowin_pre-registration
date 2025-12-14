@@ -3,7 +3,7 @@ import mongoose, { Schema, model, models } from "mongoose";
 
 export interface IPreRegistration {
   email: string;
-  userType: "advertiser" | "earner";
+  userType: "business" | "earner";
   registeredAt: Date;
   status: "pending" | "contacted" | "converted";
   ipAddress?: string;
@@ -27,8 +27,8 @@ const PreRegistrationSchema = new Schema<IPreRegistration>(
       type: String,
       required: [true, "Kullanıcı tipi gereklidir"],
       enum: {
-        values: ["advertiser", "earner"],
-        message: "Kullanıcı tipi 'advertiser' veya 'earner' olmalıdır",
+        values: ["business", "earner"],
+        message: "Kullanıcı tipi 'business' veya 'earner' olmalıdır",
       },
     },
     registeredAt: {

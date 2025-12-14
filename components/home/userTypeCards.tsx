@@ -14,6 +14,7 @@ import {
   TrendingUp,
   Sparkles,
   Users,
+  Clock,
 } from "lucide-react";
 
 interface UserTypeCardsProps {
@@ -115,6 +116,7 @@ export default function UserTypeCards({
                     <ArrowRight className="w-4 h-4" />
                     Start Now
                   </div>
+                  {/* SAFE PRE-REG INFO - EARNER */}
                 </div>
 
                 {/* CARD 2 */}
@@ -157,8 +159,39 @@ export default function UserTypeCards({
                     </p>
                   </div>
 
-                  <div className="flex items-center gap-2 text-yellow-400 text-xs font-semibold">
+                  <div className="flex items-center gap-2 text-yellow-400 text-xs font-semibold mb-4">
                     <Star className="w-4 h-4" />4 Reward Types
+                  </div>
+
+                  {/* MONTHLY WHEEL REWARDS */}
+                  <div className="bg-yellow-300/10 rounded-xl p-4 border border-yellow-300/30">
+                    <h4 className="text-white font-semibold text-sm mb-2 flex items-center gap-2">
+                      <Crown className="w-4 h-4 text-yellow-400" />
+                      Monthly Wheel Rewards
+                    </h4>
+
+                    <ul className="text-white/70 text-xs space-y-1">
+                      <li>
+                        <span className="text-yellow-300 font-semibold">
+                          1st Place:
+                        </span>{" "}
+                        $10 + 10 T-Crypto
+                      </li>
+
+                      <li>
+                        <span className="text-yellow-300 font-semibold">
+                          2nd Place:
+                        </span>{" "}
+                        $7 + 7 T-Crypto
+                      </li>
+
+                      <li>
+                        <span className="text-yellow-300 font-semibold">
+                          3rd Place:
+                        </span>{" "}
+                        $5 + 5 T-Crypto
+                      </li>
+                    </ul>
                   </div>
                 </div>
 
@@ -188,6 +221,30 @@ export default function UserTypeCards({
                     <span className="font-semibold">
                       First 10,000 users receive $1 + crypto bonus.
                     </span>
+                  </p>
+                </div>
+              </div>
+              <div className="bg-white/5 rounded-xl p-4 border border-white/10 space-y-3 mt-4">
+                {/* Block 1 */}
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-white/70" />
+                  <p className="text-white/80 text-sm">
+                    <span className="font-semibold">
+                      Safe Pre-Registration:
+                    </span>
+                    Your email is never shared with third parties and no spam is
+                    sent.
+                  </p>
+                </div>
+
+                {/* Block 2 */}
+                <div className="flex items-center gap-3">
+                  <Clock className="w-5 h-5 text-white/70" />
+                  <p className="text-white/80 text-sm">
+                    <span className="font-semibold">
+                      Limited Pre-Registration:
+                    </span>
+                    Gifts close when the quota is full.
                   </p>
                 </div>
               </div>
@@ -274,11 +331,83 @@ export default function UserTypeCards({
 
               {/* INFO */}
               <div className="bg-sky-300/10 rounded-xl p-4 border border-sky-300/30">
+                {/* EXTRA BUSINESS INFO BLOCKS */}
+                <div className="space-y-4">
+                  {/* BLOCK 1 */}
+                  <div className="bg-sky-300/10 rounded-xl p-4 border border-sky-300/30">
+                    <div className="flex items-center gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-sky-400" />
+                      <p className="text-white/90 text-sm">
+                        <span className="font-semibold">
+                          Guaranteed real user views
+                        </span>{" "}
+                        and a unique display system ensures each ad is viewed
+                        only 1 time.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* BLOCK 2 */}
+                  <div className="bg-indigo-300/10 rounded-xl p-4 border border-indigo-300/30">
+                    <div className="flex items-center gap-3">
+                      <TrendingUp className="w-5 h-5 text-indigo-300" />
+                      <p className="text-white/90 text-sm">
+                        High engagement via Wheel & App Install. Payments are
+                        securely made with Payoneer, LTC, and Credit Card.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* BLOCK 3 */}
+                  <div className="bg-emerald-300/10 rounded-xl p-4 border border-emerald-300/30">
+                    <div className="flex items-center gap-3">
+                      <Sparkles className="w-5 h-5 text-emerald-300" />
+                      <p className="text-white/90 text-sm">
+                        Minimum risk of fake clicks.{" "}
+                        <span className="font-semibold">
+                          Adstowin – Global advertising earnings platform.
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* CTA */}
+                  <button className="w-full mt-2 mb-4 px-4 bg-gradient-to-r from-sky-400 to-indigo-500 text-white font-semibold py-3 rounded-xl flex items-center justify-center gap-2 hover:scale-[1.02] transition-all">
+                    Launch Ad Now – Catch the Pre-Registration Opportunity
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+
                 <div className="flex items-center gap-3">
                   <Eye className="w-5 h-5 text-sky-400" />
                   <p className="text-white/90 text-sm">
                     20% extra visibility on your first spot.
                   </p>
+                </div>
+                {/* SAFE PRE-REG INFO - BUSINESS */}
+                <div className="bg-white/5 rounded-xl p-4 border border-white/10 space-y-3 mt-4">
+                  {/* Block 1 */}
+                  <div className="flex items-center gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-white/70" />
+                    <p className="text-white/80 text-sm">
+                      <span className="font-semibold">
+                        Safe Pre-Registration:
+                      </span>
+                      Your email is never shared with third parties and no spam
+                      is sent.
+                    </p>
+                  </div>
+
+                  {/* Block 2 */}
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-5 h-5 text-white/70" />
+                    <p className="text-white/80 text-sm">
+                      <span className="font-semibold">
+                        Limited Pre-Registration:
+                      </span>
+                      Gifts close when the quota is full.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

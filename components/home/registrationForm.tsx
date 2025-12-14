@@ -150,7 +150,7 @@ export default function RegistrationForm({
         </p>
         <p>
           During registration, we collect your name, email address, and user
-          type (Earner / Advertiser). We may also collect anonymous data related
+          type (Earner / Business). We may also collect anonymous data related
           to your usage of the service.
         </p>
         {/* ... (Diğer Politikalar) ... */}
@@ -227,7 +227,7 @@ export default function RegistrationForm({
                   </div>
                 </button>
 
-                {/* Advertiser */}
+                {/* Business */}
                 <button
                   onClick={() => setUserType("business")}
                   className={`relative py-4 px-6 rounded-xl font-semibold transition-all duration-300 ${
