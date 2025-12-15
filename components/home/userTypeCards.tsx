@@ -46,7 +46,8 @@ export default function UserTypeCards({
             >
               <div className="relative flex items-center justify-center gap-2 text-sm">
                 <Play className="w-5 h-5" />
-                <span>Earner</span>
+                <span>Reward User</span>{" "}
+                {/* Değişiklik: Earner -> Reward User */}
               </div>
             </button>
 
@@ -86,13 +87,16 @@ export default function UserTypeCards({
               {/* HEADER */}
               <div className="text-center">
                 <div className="inline-flex items-center justify-center w-20 h-20 bg-amber-300/20 rounded-2xl mb-4 border border-amber-300/30">
-                  <DollarSign className="w-10 h-10 text-amber-400" />
+                  <Star className="w-10 h-10 text-amber-400" />{" "}
+                  {/* DollarSign -> Star yapıldı */}
                 </div>
                 <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-3">
-                  For Earners
+                  For Reward Users{" "}
+                  {/* Değişiklik: For Earners -> For Reward Users */}
                 </h2>
                 <p className="text-white/70 text-md">
-                  The modern way to earn digital income.
+                  The modern way to earn digital rewards.{" "}
+                  {/* Değişiklik: digital income -> digital rewards */}
                 </p>
               </div>
 
@@ -105,11 +109,13 @@ export default function UserTypeCards({
 
                   {/* IMPORTANT SAFE TEXT */}
                   <h3 className="text-white font-bold text-lg mb-2">
-                    Watch Spots & Earn
+                    Watch Spots & Get Rewarded{" "}
+                    {/* Değişiklik: Watch Spots & Earn -> Watch Spots & Get Rewarded */}
                   </h3>
 
                   <p className="text-white/60 text-sm mb-3">
-                    Instant rewards up to $0.01.
+                    Instant points up to 10 points.{" "}
+                    {/* Değişiklik: Instant rewards up to $0.01. -> Instant points up to 10 points. */}
                   </p>
                   <div className="flex items-center gap-2 text-amber-400 text-xs font-semibold">
                     <ArrowRight className="w-4 h-4" />
@@ -146,14 +152,14 @@ export default function UserTypeCards({
                     <p>
                       Instant Win:{" "}
                       <span className="text-green-300 font-semibold">
-                        $0.10
+                        100 Points {/* Değişiklik: $0.10 -> 100 Points */}
                       </span>
                     </p>
 
                     <p>
                       Instant Win:{" "}
                       <span className="text-emerald-300 font-semibold">
-                        $1.00
+                        1000 Points {/* Değişiklik: $1.00 -> 1000 Points */}
                       </span>
                     </p>
                   </div>
@@ -174,21 +180,24 @@ export default function UserTypeCards({
                         <span className="text-yellow-300 font-semibold">
                           1st Place:
                         </span>{" "}
-                        $10 + 10 T-Crypto
+                        10000 Points + 10 T-Crypto{" "}
+                        {/* Değişiklik: $10 -> 10000 Points */}
                       </li>
 
                       <li>
                         <span className="text-yellow-300 font-semibold">
                           2nd Place:
                         </span>{" "}
-                        $7 + 7 T-Crypto
+                        7000 Points + 7 T-Crypto{" "}
+                        {/* Değişiklik: $7 -> 7000 Points */}
                       </li>
 
                       <li>
                         <span className="text-yellow-300 font-semibold">
                           3rd Place:
                         </span>{" "}
-                        $5 + 5 T-Crypto
+                        5000 Points + 5 T-Crypto{" "}
+                        {/* Değişiklik: $5 -> 5000 Points */}
                       </li>
                     </ul>
                   </div>
@@ -200,10 +209,12 @@ export default function UserTypeCards({
                     <Gift className="w-7 h-7 text-purple-400" />
                   </div>
                   <h3 className="text-white font-bold text-lg mb-2">
-                    Extra Earning Methods
+                    Extra Reward Methods{" "}
+                    {/* Değişiklik: Extra Earning Methods -> Extra Reward Methods */}
                   </h3>
                   <p className="text-white/60 text-sm mb-3">
-                    Installing Applications etc.
+                    Installing Applications & Tasks.{" "}
+                    {/* Açıklama netleştirildi */}
                   </p>
                   <div className="flex items-center gap-2 text-purple-400 text-xs font-semibold">
                     <Zap className="w-4 h-4" />
@@ -218,7 +229,8 @@ export default function UserTypeCards({
                   <CheckCircle2 className="w-5 h-5 text-amber-400" />
                   <p className="text-white/90 text-sm">
                     <span className="font-semibold">
-                      First 10,000 users receive $1 + crypto bonus.
+                      First 10,000 users receive 1000 Points + crypto bonus.{" "}
+                      {/* Değişiklik: $1 -> 1000 Points */}
                     </span>
                   </p>
                 </div>
@@ -267,7 +279,7 @@ export default function UserTypeCards({
               </div>
 
               <div className="grid md:grid-cols-3 gap-6">
-                {/* CARD 1 */}
+                {/* CARD 1 (Business - Standard) */}
                 <div className="bg-white/5 rounded-2xl p-6 border border-sky-300/30 transition-all duration-300 hover:scale-[1.02] hover:border-sky-400/60">
                   <div className="w-14 h-14 bg-sky-300/20 rounded-xl flex items-center justify-center mb-4 border border-sky-300/30">
                     <TrendingUp className="w-7 h-7 text-sky-400" />
@@ -287,7 +299,7 @@ export default function UserTypeCards({
                   </div>
                 </div>
 
-                {/* CARD 2 */}
+                {/* CARD 2 (Business - Premium) */}
                 <div className="bg-white/5 rounded-2xl p-6 border border-indigo-300/30 transition-all duration-300 hover:scale-[1.02] hover:border-indigo-400/60">
                   <div className="w-14 h-14 bg-indigo-300/20 rounded-xl flex items-center justify-center mb-4 border border-indigo-300/30">
                     <Sparkles className="w-7 h-7 text-indigo-300" />
@@ -307,7 +319,7 @@ export default function UserTypeCards({
                   </div>
                 </div>
 
-                {/* CARD 3 */}
+                {/* CARD 3 (Business - Smart Start) */}
                 <div className="bg-white/5 rounded-2xl p-6 border border-emerald-300/30 transition-all duration-300 hover:scale-[1.02] hover:border-emerald-400/60">
                   <div className="w-14 h-14 bg-emerald-300/20 rounded-xl flex items-center justify-center mb-4 border border-emerald-300/30">
                     <Users className="w-7 h-7 text-emerald-300" />
@@ -364,7 +376,8 @@ export default function UserTypeCards({
                       <p className="text-white/90 text-sm">
                         Minimum risk of fake clicks.{" "}
                         <span className="font-semibold">
-                          Adstowin – Global advertising earnings platform.
+                          Adstowin – Global advertising & reward platform.{" "}
+                          {/* Değişiklik: earnings -> reward */}
                         </span>
                       </p>
                     </div>
@@ -376,7 +389,6 @@ export default function UserTypeCards({
                   </button>
                 </div>
 
-              
                 {/* SAFE PRE-REG INFO - BUSINESS */}
                 <div className="bg-white/5 rounded-xl p-4 border border-white/10 space-y-3 mt-4 mb-4">
                   {/* Block 1 */}
@@ -402,7 +414,7 @@ export default function UserTypeCards({
                     </p>
                   </div>
                 </div>
-                  <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3">
                   <Eye className="w-5 h-5 text-sky-400" />
                   <p className="text-white/90 text-sm">
                     20% extra visibility on your first spot.

@@ -6,7 +6,7 @@ import {
   Play,
   Target,
   X,
-  DollarSign,
+  Star, // Değişiklik: DollarSign -> Star
   Megaphone,
 } from "lucide-react";
 import { toast } from "sonner";
@@ -212,7 +212,7 @@ export default function RegistrationForm({
             </label>
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-2 border border-white/10">
               <div className="grid grid-cols-2 gap-2">
-                {/* Money Earner */}
+                {/* Reward Earner */}
                 <button
                   onClick={() => setUserType("earner")}
                   className={`relative py-4 px-6 rounded-xl font-semibold transition-all duration-300 ${
@@ -222,8 +222,10 @@ export default function RegistrationForm({
                   }`}
                 >
                   <div className="relative flex items-center justify-center gap-2 text-sm">
-                    <DollarSign className="w-5 h-5" />
-                    <span>Money Earner</span>
+                    <Star className="w-5 h-5" />
+                    {/* Değişiklik: DollarSign -> Star */}
+                    <span>Reward Earner</span>
+                    {/* Değişiklik: Money Earner -> Reward Earner */}
                   </div>
                 </button>
 

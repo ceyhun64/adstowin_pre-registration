@@ -62,9 +62,9 @@ export default function Heroes({ onScrollToForm }: HeyellowctionProps) {
             className="absolute inset-0 opacity-20"
             style={{
               backgroundImage: `
-        linear-gradient(to right, rgba(255,255,255,0.18) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255,255,255,0.18) 1px, transparent 1px)
-      `,
+          linear-gradient(to right, rgba(255,255,255,0.18) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255,255,255,0.18) 1px, transparent 1px)
+        `,
               backgroundSize: "80px 80px",
             }}
           ></div>
@@ -102,8 +102,9 @@ export default function Heroes({ onScrollToForm }: HeyellowctionProps) {
             <div className="flex items-center gap-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-4 py-2.5 shadow-lg hover:bg-white/10 transition-all duration-300">
               <Zap className="w-4 h-4 text-yellow-400" />
               <span className="text-sm font-semibold text-white">
-                Instant Payout
+                Fast Processing
               </span>
+              {/* Değişiklik: Instant Payout -> Fast Processing */}
             </div>
             <div className="flex items-center gap-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-4 py-2.5 shadow-lg hover:bg-white/10 transition-all duration-300">
               <Award className="w-4 h-4 text-amber-300" />
@@ -129,13 +130,15 @@ export default function Heroes({ onScrollToForm }: HeyellowctionProps) {
               <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] xl:text-[8rem] bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-400 bg-clip-text text-transparent">
                 {" "}
                 {/* Boyut büyütüldü */}
-                EARN
+                REWARD
+                {/* Değişiklik: EARN -> REWARD */}
               </span>
             </h1>
             <div className="relative inline-block">
               <div className="absolute inset-0 bg-gradient-to-r from-amber-500/30 to-yellow-500/30 blur-xl"></div>
               <p className="relative text-2xl sm:text-3xl md:text-4xl font-bold text-white px-4 py-2">
-                Next-Generation Digital Income
+                Next-Generation Digital Rewards
+                {/* Değişiklik: Digital Income -> Digital Rewards */}
               </p>
             </div>
           </div>
@@ -145,7 +148,8 @@ export default function Heroes({ onScrollToForm }: HeyellowctionProps) {
             {" "}
             {/* Max-width eklendi */}
             <span className="text-amber-400 font-semibold">
-              Effortlessly earn
+              Earn points simply
+              {/* Değişiklik: Effortlessly earn -> Earn points simply */}
             </span>{" "}
             from your mobile device, or{" "}
             <span className="text-yellow-400 font-semibold">
