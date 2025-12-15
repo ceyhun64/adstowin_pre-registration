@@ -376,7 +376,7 @@ export default function UserTypeCards({
                       <p className="text-white/90 text-sm">
                         Minimum risk of fake clicks.{" "}
                         <span className="font-semibold">
-                          Adstowin – Global advertising & reward platform.{" "}
+                          Adstowin – Reward platform.{" "}
                           {/* Değişiklik: earnings -> reward */}
                         </span>
                       </p>
