@@ -15,7 +15,7 @@ const PreRegistrationSchema = new Schema<IPreRegistration>(
     email: {
       type: String,
       required: [true, "E-posta adresi gereklidir"],
-      unique: true,
+      unique: true, // unique index zaten otomatik oluşturur
       lowercase: true,
       trim: true,
       match: [
@@ -42,11 +42,9 @@ const PreRegistrationSchema = new Schema<IPreRegistration>(
     },
     ipAddress: {
       type: String,
-      required: false,
     },
     userAgent: {
       type: String,
-      required: false,
     },
   },
   {
@@ -54,8 +52,9 @@ const PreRegistrationSchema = new Schema<IPreRegistration>(
   }
 );
 
-// Index for faster queries
-PreRegistrationSchema.index({ email: 1 });
+
+
+// Bunlar sorun değil
 PreRegistrationSchema.index({ userType: 1 });
 PreRegistrationSchema.index({ registeredAt: -1 });
 
