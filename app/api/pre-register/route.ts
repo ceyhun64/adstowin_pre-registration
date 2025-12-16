@@ -48,7 +48,6 @@ export async function POST(request: NextRequest) {
     if (existingRegistration) {
       return NextResponse.json(
         { error: "This email has already been registered" },
-        { status: 409 }
       );
     }
 
@@ -80,7 +79,6 @@ export async function POST(request: NextRequest) {
     if (error.name === "ValidationError") {
       return NextResponse.json(
         { error: "Invalid data format", details: error.message },
-        { status: 400 }
       );
     }
 
@@ -88,13 +86,11 @@ export async function POST(request: NextRequest) {
     if (error.code === 11000) {
       return NextResponse.json(
         { error: "This email has already been registered" },
-        { status: 409 }
       );
     }
 
     return NextResponse.json(
       { error: "Server error. Please try again later." },
-      { status: 500 }
     );
   }
 }
@@ -147,7 +143,6 @@ export async function GET(request: NextRequest) {
     console.error("Get pre-registrations error:", error);
     return NextResponse.json(
       { error: "An error occurred while fetching statistics" },
-      { status: 500 }
     );
   }
 }
