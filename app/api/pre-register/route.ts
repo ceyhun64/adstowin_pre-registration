@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Email format validation
-    const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json(
         { error: "Please enter a valid email address" },
@@ -46,9 +46,9 @@ export async function POST(request: NextRequest) {
     const existingRegistration = await PreRegistration.findOne({ email });
 
     if (existingRegistration) {
-      return NextResponse.json(
-        { error: "This email has already been registered" },
-      );
+      return NextResponse.json({
+        error: "This email has already been registered",
+      });
     }
 
     // Create new registration
@@ -77,21 +77,22 @@ export async function POST(request: NextRequest) {
 
     // Mongoose validation error
     if (error.name === "ValidationError") {
-      return NextResponse.json(
-        { error: "Invalid data format", details: error.message },
-      );
+      return NextResponse.json({
+        error: "Invalid data format",
+        details: error.message,
+      });
     }
 
     // Duplicate key error (email already exists)
     if (error.code === 11000) {
-      return NextResponse.json(
-        { error: "This email has already been registered" },
-      );
+      return NextResponse.json({
+        error: "This email has already been registered",
+      });
     }
 
-    return NextResponse.json(
-      { error: "Server error. Please try again later." },
-    );
+    return NextResponse.json({
+      error: "Server error. Please try again later.",
+    });
   }
 }
 
@@ -141,8 +142,8 @@ export async function GET(request: NextRequest) {
     });
   } catch (error) {
     console.error("Get pre-registrations error:", error);
-    return NextResponse.json(
-      { error: "An error occurred while fetching statistics" },
-    );
+    return NextResponse.json({
+      error: "An error occurred while fetching statistics",
+    });
   }
 }
