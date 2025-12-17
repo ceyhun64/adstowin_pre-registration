@@ -114,7 +114,7 @@ export default function UserTypeCards({
                   </h3>
 
                   <p className="text-white/60 text-sm mb-3">
-                    Instant points up to 0.01$.{" "}
+                    Instant points up to $0.01.{" "}
                     {/* Değişiklik: Instant rewards up to $0.01. -> Instant points up to 10 points. */}
                   </p>
                   <div className="flex items-center gap-2 text-amber-400 text-xs font-semibold">
@@ -328,7 +328,7 @@ export default function UserTypeCards({
                   </h3>
 
                   <p className="text-white/60 text-sm mb-3">
-                    Contact us to place an advertisement.
+                    Begin with a minimum $5 budget.
                   </p>
                   <div className="flex items-center gap-2 text-emerald-300 text-xs font-semibold">
                     <Zap className="w-4 h-4" />
