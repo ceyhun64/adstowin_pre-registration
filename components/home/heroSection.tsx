@@ -148,7 +148,7 @@ export default function Heroes({ onScrollToForm }: HeyellowctionProps) {
             {" "}
             {/* Max-width eklendi */}
             <span className="text-amber-400 font-semibold">
-              Earn dolars simply
+              Earn dollars simply
               {/* Değişiklik: Effortlessly earn -> Earn points simply */}
             </span>{" "}
             from your mobile device, or{" "}
