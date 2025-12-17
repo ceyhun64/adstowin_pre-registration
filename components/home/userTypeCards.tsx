@@ -328,7 +328,7 @@ export default function UserTypeCards({
                   </h3>
 
                   <p className="text-white/60 text-sm mb-3">
-                    Begin with a minimum 5 point budget.
+                    Contact us to place an advertisement.
                   </p>
                   <div className="flex items-center gap-2 text-emerald-300 text-xs font-semibold">
                     <Zap className="w-4 h-4" />
