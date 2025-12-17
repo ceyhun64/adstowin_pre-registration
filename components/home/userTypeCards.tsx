@@ -152,14 +152,14 @@ export default function UserTypeCards({
                     <p>
                       Instant Win:{" "}
                       <span className="text-green-300 font-semibold">
-                        100 Points {/* Değişiklik: $0.10 -> 100 Points */}
+                        $0.10
                       </span>
                     </p>
 
                     <p>
                       Instant Win:{" "}
                       <span className="text-emerald-300 font-semibold">
-                        1000 Points {/* Değişiklik: $1.00 -> 1000 Points */}
+                        $1.00
                       </span>
                     </p>
                   </div>
@@ -180,24 +180,21 @@ export default function UserTypeCards({
                         <span className="text-yellow-300 font-semibold">
                           1st Place:
                         </span>{" "}
-                        10000 Points + 10 T-Crypto{" "}
-                        {/* Değişiklik: $10 -> 10000 Points */}
+                        $10 + 10 T-Crypto
                       </li>
 
                       <li>
                         <span className="text-yellow-300 font-semibold">
                           2nd Place:
                         </span>{" "}
-                        7000 Points + 7 T-Crypto{" "}
-                        {/* Değişiklik: $7 -> 7000 Points */}
+                        $7 + 7 T-Crypto
                       </li>
 
                       <li>
                         <span className="text-yellow-300 font-semibold">
                           3rd Place:
                         </span>{" "}
-                        5000 Points + 5 T-Crypto{" "}
-                        {/* Değişiklik: $5 -> 5000 Points */}
+                        $5 + 5 T-Crypto
                       </li>
                     </ul>
                   </div>
@@ -229,7 +226,7 @@ export default function UserTypeCards({
                   <CheckCircle2 className="w-5 h-5 text-amber-400" />
                   <p className="text-white/90 text-sm">
                     <span className="font-semibold">
-                      First 10,000 users receive 1000 Points + crypto bonus.{" "}
+                      First 10,000 users receive $1 + crypto bonus.{" "}
                       {/* Değişiklik: $1 -> 1000 Points */}
                     </span>
                   </p>
