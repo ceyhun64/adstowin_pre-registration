@@ -2,7 +2,6 @@
 import {
   Play,
   Target,
-  DollarSign,
   Crown,
   Gift,
   Star,
@@ -14,6 +13,7 @@ import {
   Sparkles,
   Users,
   Clock,
+  Award,
 } from "lucide-react";
 
 interface UserTypeCardsProps {
@@ -35,7 +35,7 @@ export default function UserTypeCards({
 
         <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-2 border border-white/10">
           <div className="grid grid-cols-2 gap-2">
-            {/* EARNER */}
+            {/* PARTICIPANT */}
             <button
               onClick={() => setUserType("earner")}
               className={`relative py-4 px-6 rounded-xl font-semibold transition-all duration-300 ${
@@ -46,12 +46,11 @@ export default function UserTypeCards({
             >
               <div className="relative flex items-center justify-center gap-2 text-sm">
                 <Play className="w-5 h-5" />
-                <span>Reward User</span>{" "}
-                {/* Değişiklik: Earner -> Reward User */}
+                <span>Participant</span>
               </div>
             </button>
 
-            {/* BUSINESS (SAFE MODE) */}
+            {/* BUSINESS */}
             <button
               onClick={() => setUserType("business")}
               className={`relative py-4 px-6 rounded-xl font-semibold transition-all duration-300 ${
@@ -87,16 +86,13 @@ export default function UserTypeCards({
               {/* HEADER */}
               <div className="text-center">
                 <div className="inline-flex items-center justify-center w-20 h-20 bg-amber-300/20 rounded-2xl mb-4 border border-amber-300/30">
-                  <Star className="w-10 h-10 text-amber-400" />{" "}
-                  {/* DollarSign -> Star yapıldı */}
+                  <Star className="w-10 h-10 text-amber-400" />
                 </div>
                 <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-3">
-                  For Reward Users{" "}
-                  {/* Değişiklik: For Earners -> For Reward Users */}
+                  For Participants
                 </h2>
                 <p className="text-white/70 text-md">
-                  The modern way to earn digital rewards.{" "}
-                  {/* Değişiklik: digital income -> digital rewards */}
+                  Engage with content and receive valuable rewards.
                 </p>
               </div>
 
@@ -106,22 +102,16 @@ export default function UserTypeCards({
                   <div className="w-14 h-14 bg-amber-300/20 rounded-xl flex items-center justify-center mb-4 border border-amber-300/30">
                     <Eye className="w-7 h-7 text-amber-400" />
                   </div>
-
-                  {/* IMPORTANT SAFE TEXT */}
                   <h3 className="text-white font-bold text-lg mb-2">
-                    Watch Spots & Get Rewarded{" "}
-                    {/* Değişiklik: Watch Spots & Earn -> Watch Spots & Get Rewarded */}
+                    Interactive Content
                   </h3>
-
                   <p className="text-white/60 text-sm mb-3">
-                    Instant points up to 1o points.{" "}
-                    {/* Değişiklik: Instant rewards up to $0.01. -> Instant points up to 10 points. */}
+                    Engage with sponsored content and receive points instantly.
                   </p>
                   <div className="flex items-center gap-2 text-amber-400 text-xs font-semibold">
                     <ArrowRight className="w-4 h-4" />
-                    Start Now
+                    Start Engaging
                   </div>
-                  {/* SAFE PRE-REG INFO - EARNER */}
                 </div>
 
                 {/* CARD 2 */}
@@ -129,72 +119,57 @@ export default function UserTypeCards({
                   <div className="w-14 h-14 bg-yellow-300/20 rounded-xl flex items-center justify-center mb-4 border border-yellow-300/30">
                     <Crown className="w-7 h-7 text-yellow-400" />
                   </div>
-
                   <h3 className="text-white font-bold text-lg mb-2">
-                    Wheel of Fortune
+                    Fortune Wheel
                   </h3>
-
                   <div className="text-white/60 text-sm mb-3 space-y-2">
                     <p>
-                      Normal Ticket Draw{" "}
+                      Standard Entry{" "}
                       <span className="text-amber-300 font-semibold">
-                        (Random prize)
+                        (Random rewards)
                       </span>
                     </p>
-
                     <p>
-                      Premium Ticket Draw{" "}
+                      Premium Entry{" "}
                       <span className="text-yellow-300 font-semibold">
-                        (Higher chance)
+                        (Better chances)
                       </span>
                     </p>
-
                     <p>
-                      Instant Win:{" "}
+                      Bonus Rewards:{" "}
                       <span className="text-green-300 font-semibold">
-                        $0.10
-                      </span>
-                    </p>
-
-                    <p>
-                      Instant Win:{" "}
-                      <span className="text-emerald-300 font-semibold">
-                        $1.00
+                        Instant
                       </span>
                     </p>
                   </div>
-
                   <div className="flex items-center gap-2 text-yellow-400 text-xs font-semibold mb-4">
-                    <Star className="w-4 h-4" />4 Reward Types
+                    <Star className="w-4 h-4" />4 Reward Levels
                   </div>
 
-                  {/* MONTHLY WHEEL REWARDS */}
+                  {/* MONTHLY REWARDS */}
                   <div className="bg-yellow-300/10 rounded-xl p-4 border border-yellow-300/30">
                     <h4 className="text-white font-semibold text-sm mb-2 flex items-center gap-2">
                       <Crown className="w-4 h-4 text-yellow-400" />
-                      Monthly Wheel Rewards
+                      Monthly Top Performers
                     </h4>
-
                     <ul className="text-white/70 text-xs space-y-1">
                       <li>
                         <span className="text-yellow-300 font-semibold">
                           1st Place:
                         </span>{" "}
-                        $10 + 10 T-Crypto
+                        Premium Package + Bonus
                       </li>
-
                       <li>
                         <span className="text-yellow-300 font-semibold">
                           2nd Place:
                         </span>{" "}
-                        $7 + 7 T-Crypto
+                        Advanced Package + Bonus
                       </li>
-
                       <li>
                         <span className="text-yellow-300 font-semibold">
                           3rd Place:
                         </span>{" "}
-                        $5 + 5 T-Crypto
+                        Standard Package + Bonus
                       </li>
                     </ul>
                   </div>
@@ -206,16 +181,14 @@ export default function UserTypeCards({
                     <Gift className="w-7 h-7 text-purple-400" />
                   </div>
                   <h3 className="text-white font-bold text-lg mb-2">
-                    Extra Reward Methods{" "}
-                    {/* Değişiklik: Extra Earning Methods -> Extra Reward Methods */}
+                    Extra Activities
                   </h3>
                   <p className="text-white/60 text-sm mb-3">
-                    Installing Applications & Tasks.{" "}
-                    {/* Açıklama netleştirildi */}
+                    Complete tasks and challenges for additional rewards.
                   </p>
                   <div className="flex items-center gap-2 text-purple-400 text-xs font-semibold">
                     <Zap className="w-4 h-4" />
-                    VIP Benefits
+                    Premium Benefits
                   </div>
                 </div>
               </div>
@@ -223,36 +196,28 @@ export default function UserTypeCards({
               {/* INFO */}
               <div className="bg-amber-300/10 rounded-xl p-4 border border-amber-300/30">
                 <div className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-amber-400" />
+                  <Award className="w-5 h-5 text-amber-400" />
                   <p className="text-white/90 text-sm">
                     <span className="font-semibold">
-                      First 10,000 users receive $1 + crypto bonus.{" "}
-                      {/* Değişiklik: $1 -> 1000 Points */}
+                      First 10,000 members receive special launch bonuses!
                     </span>
                   </p>
                 </div>
               </div>
+
               <div className="bg-white/5 rounded-xl p-4 border border-white/10 space-y-3 mt-4">
-                {/* Block 1 */}
                 <div className="flex items-center gap-3">
                   <CheckCircle2 className="w-5 h-5 text-white/70" />
                   <p className="text-white/80 text-sm">
-                    <span className="font-semibold">
-                      Safe Pre-Registration:
-                    </span>
-                    Your email is never shared with third parties and no spam is
-                    sent.
+                    <span className="font-semibold">Secure Registration:</span>
+                    Your data is encrypted and never shared with third parties.
                   </p>
                 </div>
-
-                {/* Block 2 */}
                 <div className="flex items-center gap-3">
                   <Clock className="w-5 h-5 text-white/70" />
                   <p className="text-white/80 text-sm">
-                    <span className="font-semibold">
-                      Limited Pre-Registration:
-                    </span>
-                    Gifts close when the quota is full.
+                    <span className="font-semibold">Limited Early Access:</span>
+                    Special bonuses available for early registrations only.
                   </p>
                 </div>
               </div>
@@ -264,31 +229,25 @@ export default function UserTypeCards({
                 <div className="inline-flex items-center justify-center w-20 h-20 bg-sky-300/20 rounded-2xl mb-4 border border-sky-300/30">
                   <Target className="w-10 h-10 text-sky-400" />
                 </div>
-
-                {/* SAFE TITLE */}
                 <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-3">
                   For Business Partners
                 </h2>
-
                 <p className="text-white/70 text-md">
-                  Grow with modern engagement tools.
+                  Connect with engaged audiences through our platform.
                 </p>
               </div>
 
               <div className="grid md:grid-cols-3 gap-6">
-                {/* CARD 1 (Business - Standard) */}
+                {/* CARD 1 */}
                 <div className="bg-white/5 rounded-2xl p-6 border border-sky-300/30 transition-all duration-300 hover:scale-[1.02] hover:border-sky-400/60">
                   <div className="w-14 h-14 bg-sky-300/20 rounded-xl flex items-center justify-center mb-4 border border-sky-300/30">
                     <TrendingUp className="w-7 h-7 text-sky-400" />
                   </div>
-
-                  {/* SAFE TEXT */}
                   <h3 className="text-white font-bold text-lg mb-2">
-                    Standard Spots
+                    Standard Campaigns
                   </h3>
-
                   <p className="text-white/60 text-sm mb-3">
-                    In-content or interactive spot options.
+                    Flexible placement options with targeted audience reach.
                   </p>
                   <div className="flex items-center gap-2 text-sky-400 text-xs font-semibold">
                     <ArrowRight className="w-4 h-4" />
@@ -296,125 +255,104 @@ export default function UserTypeCards({
                   </div>
                 </div>
 
-                {/* CARD 2 (Business - Premium) */}
+                {/* CARD 2 */}
                 <div className="bg-white/5 rounded-2xl p-6 border border-indigo-300/30 transition-all duration-300 hover:scale-[1.02] hover:border-indigo-400/60">
                   <div className="w-14 h-14 bg-indigo-300/20 rounded-xl flex items-center justify-center mb-4 border border-indigo-300/30">
                     <Sparkles className="w-7 h-7 text-indigo-300" />
                   </div>
-
-                  {/* SAFE TEXT */}
                   <h3 className="text-white font-bold text-lg mb-2">
-                    Premium Spots
+                    Premium Campaigns
                   </h3>
-
                   <p className="text-white/60 text-sm mb-3">
-                    100% guaranteed visibility.
+                    Guaranteed visibility with priority placement options.
                   </p>
                   <div className="flex items-center gap-2 text-indigo-300 text-xs font-semibold">
                     <Star className="w-4 h-4" />
-                    High Engagement
+                    Maximum Engagement
                   </div>
                 </div>
 
-                {/* CARD 3 (Business - Smart Start) */}
+                {/* CARD 3 */}
                 <div className="bg-white/5 rounded-2xl p-6 border border-emerald-300/30 transition-all duration-300 hover:scale-[1.02] hover:border-emerald-400/60">
                   <div className="w-14 h-14 bg-emerald-300/20 rounded-xl flex items-center justify-center mb-4 border border-emerald-300/30">
                     <Users className="w-7 h-7 text-emerald-300" />
                   </div>
-
-                  {/* SAFE TEXT */}
                   <h3 className="text-white font-bold text-lg mb-2">
                     Smart Start
                   </h3>
-
                   <p className="text-white/60 text-sm mb-3">
-                    Begin with a minimum 5 points budget.
+                    Begin with flexible budget options and precise targeting.
                   </p>
                   <div className="flex items-center gap-2 text-emerald-300 text-xs font-semibold">
                     <Zap className="w-4 h-4" />
-                    Precise Targeting
+                    Advanced Targeting
                   </div>
                 </div>
               </div>
 
-              {/* INFO */}
+              {/* INFO BLOCKS */}
+              <div className="space-y-4">
+                <div className="bg-sky-300/10 rounded-xl p-4 border border-sky-300/30">
+                  <div className="flex items-center gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-sky-400" />
+                    <p className="text-white/90 text-sm">
+                      <span className="font-semibold">
+                        Verified engagement metrics
+                      </span>{" "}
+                      with transparent reporting and unique view tracking.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-indigo-300/10 rounded-xl p-4 border border-indigo-300/30">
+                  <div className="flex items-center gap-3">
+                    <TrendingUp className="w-5 h-5 text-indigo-300" />
+                    <p className="text-white/90 text-sm">
+                      High engagement rates through interactive campaigns.
+                      Secure payments via multiple methods.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-emerald-300/10 rounded-xl p-4 border border-emerald-300/30">
+                  <div className="flex items-center gap-3">
+                    <Sparkles className="w-5 h-5 text-emerald-300" />
+                    <p className="text-white/90 text-sm">
+                      <span className="font-semibold">
+                        Premium quality traffic
+                      </span>{" "}
+                      with advanced fraud protection systems.
+                    </p>
+                  </div>
+                </div>
+
+                <button className="w-full mt-2 mb-4 px-4 bg-gradient-to-r from-sky-400 to-indigo-500 text-white font-semibold py-3 rounded-xl flex items-center justify-center gap-2 hover:scale-[1.02] transition-all">
+                  Get Started – Join Early Access
+                </button>
+              </div>
+
+              <div className="bg-white/5 rounded-xl p-4 border border-white/10 space-y-3">
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-white/70" />
+                  <p className="text-white/80 text-sm">
+                    <span className="font-semibold">Secure Registration:</span>
+                    Your information is protected and never shared.
+                  </p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Clock className="w-5 h-5 text-white/70" />
+                  <p className="text-white/80 text-sm">
+                    <span className="font-semibold">Limited Launch Offer:</span>
+                    Special rates for early adopters.
+                  </p>
+                </div>
+              </div>
+
               <div className="bg-sky-300/10 rounded-xl p-4 border border-sky-300/30">
-                {/* EXTRA BUSINESS INFO BLOCKS */}
-                <div className="space-y-4">
-                  {/* BLOCK 1 */}
-                  <div className="bg-sky-300/10 rounded-xl p-4 border border-sky-300/30">
-                    <div className="flex items-center gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-sky-400" />
-                      <p className="text-white/90 text-sm">
-                        <span className="font-semibold">
-                          Guaranteed real user views
-                        </span>{" "}
-                        and a unique display system ensures each ad is viewed
-                        only 1 time.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* BLOCK 2 */}
-                  <div className="bg-indigo-300/10 rounded-xl p-4 border border-indigo-300/30">
-                    <div className="flex items-center gap-3">
-                      <TrendingUp className="w-5 h-5 text-indigo-300" />
-                      <p className="text-white/90 text-sm">
-                        High engagement via Wheel & App Install. Payments are
-                        securely made with Payoneer, LTC, and Credit Card.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* BLOCK 3 */}
-                  <div className="bg-emerald-300/10 rounded-xl p-4 border border-emerald-300/30">
-                    <div className="flex items-center gap-3">
-                      <Sparkles className="w-5 h-5 text-emerald-300" />
-                      <p className="text-white/90 text-sm">
-                        Minimum risk of fake clicks.{" "}
-                        <span className="font-semibold">
-                          Adstowin – Reward platform.{" "}
-                          {/* Değişiklik: earnings -> reward */}
-                        </span>
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* CTA */}
-                  <button className="w-full mt-2 mb-4 px-4 bg-gradient-to-r from-sky-400 to-indigo-500 text-white font-semibold py-3 rounded-xl flex items-center justify-center gap-2 hover:scale-[1.02] transition-all">
-                    Launch Ad Now – Catch the Pre-Registration Opportunity
-                  </button>
-                </div>
-
-                {/* SAFE PRE-REG INFO - BUSINESS */}
-                <div className="bg-white/5 rounded-xl p-4 border border-white/10 space-y-3 mt-4 mb-4">
-                  {/* Block 1 */}
-                  <div className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-white/70" />
-                    <p className="text-white/80 text-sm">
-                      <span className="font-semibold">
-                        Safe Pre-Registration:
-                      </span>
-                      Your email is never shared with third parties and no spam
-                      is sent.
-                    </p>
-                  </div>
-
-                  {/* Block 2 */}
-                  <div className="flex items-center gap-3">
-                    <Clock className="w-5 h-5 text-white/70" />
-                    <p className="text-white/80 text-sm">
-                      <span className="font-semibold">
-                        Limited Pre-Registration:
-                      </span>
-                      Gifts close when the quota is full.
-                    </p>
-                  </div>
-                </div>
                 <div className="flex items-center gap-3">
                   <Eye className="w-5 h-5 text-sky-400" />
                   <p className="text-white/90 text-sm">
-                    20% extra visibility on your first spot.
+                    20% bonus visibility on your first campaign.
                   </p>
                 </div>
               </div>

@@ -10,11 +10,11 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 
-interface HeyellowctionProps {
+interface HeroSectionProps {
   onScrollToForm: () => void;
 }
 
-export default function Heroes({ onScrollToForm }: HeyellowctionProps) {
+export default function HeroSection({ onScrollToForm }: HeroSectionProps) {
   const [registeredCount, setRegisteredCount] = useState(1247);
   const [animationPhase, setAnimationPhase] = useState(0);
 
@@ -54,10 +54,7 @@ export default function Heroes({ onScrollToForm }: HeyellowctionProps) {
               "linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)",
           }}
         >
-          {/* Hafif karartılmış grid yüzeyi */}
           <div className="absolute inset-0 bg-white/2"></div>
-
-          {/* Çizgiler (biraz daha koyu) */}
           <div
             className="absolute inset-0 opacity-20"
             style={{
@@ -73,13 +70,11 @@ export default function Heroes({ onScrollToForm }: HeyellowctionProps) {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-        {/* LEFT - Logo and Features (Mobil: Üstte ortalanmış | Tablet/Desktop: Solda ortalanmış) */}
+        {/* LEFT - Logo and Features */}
         <div className="flex flex-col items-center justify-start space-y-10 lg:order-1">
           {/* Logo */}
           <div className="relative group">
             <div className="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center transition-all duration-500 hover:scale-105">
-              {" "}
-              {/* Boyutlar düzenlendi */}
               <Image
                 src="/logo/logotrans.png"
                 alt="ADSTOWIN Logo"
@@ -104,7 +99,6 @@ export default function Heroes({ onScrollToForm }: HeyellowctionProps) {
               <span className="text-sm font-semibold text-white">
                 Fast Processing
               </span>
-              {/* Değişiklik: Instant Payout -> Fast Processing */}
             </div>
             <div className="flex items-center gap-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-4 py-2.5 shadow-lg hover:bg-white/10 transition-all duration-300">
               <Award className="w-4 h-4 text-amber-300" />
@@ -115,47 +109,36 @@ export default function Heroes({ onScrollToForm }: HeyellowctionProps) {
           </div>
         </div>
 
-        {/* RIGHT - Text and CTA (Mobil: Üstte ortalanmış | Tablet/Desktop: Sağda sola hizalı) */}
+        {/* RIGHT - Text and CTA */}
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-8 lg:order-2">
           {/* Title */}
           <div className="space-y-2">
             <h1 className="font-black leading-[0.85] tracking-tight font-main">
-              {" "}
-              {/* font-mono -> font-main yapıldı */}
               <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] xl:text-[8rem] bg-gradient-to-r from-amber-500 via-orange-400 to-yellow-400 bg-clip-text text-transparent">
-                {" "}
-                {/* Boyut büyütüldü */}
-                WATCH
+                ENGAGE
               </span>
               <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] xl:text-[8rem] bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-400 bg-clip-text text-transparent">
-                {" "}
-                {/* Boyut büyütüldü */}
                 REWARD
-                {/* Değişiklik: EARN -> REWARD */}
               </span>
             </h1>
             <div className="relative inline-block">
               <div className="absolute inset-0 bg-gradient-to-r from-amber-500/30 to-yellow-500/30 blur-xl"></div>
               <p className="relative text-2xl sm:text-3xl md:text-4xl font-bold text-white px-4 py-2">
-                Next-Generation Digital Rewards
-                {/* Değişiklik: Digital Income -> Digital Rewards */}
+                Next-Gen Digital Engagement Platform
               </p>
             </div>
           </div>
 
-          {/* Description */}
+          {/* Description - Google Safe */}
           <p className="text-lg md:text-xl text-slate-300 font-normal max-w-lg leading-relaxed">
-            {" "}
-            {/* Max-width eklendi */}
             <span className="text-amber-400 font-semibold">
-              Earn dollars simply
-              {/* Değişiklik: Effortlessly earn -> Earn points simply */}
+              Connect with real audiences
             </span>{" "}
-            from your mobile device, or{" "}
+            through our innovative engagement system, or{" "}
             <span className="text-yellow-400 font-semibold">
-              reach a real, engaging audience
+              gain valuable rewards
             </span>{" "}
-            in seconds.
+            by participating in interactive campaigns.
           </p>
 
           {/* CTA Button */}
@@ -170,7 +153,7 @@ export default function Heroes({ onScrollToForm }: HeyellowctionProps) {
             </div>
             <span className="relative text-white flex items-center gap-3 z-10">
               <Sparkles className="w-6 h-6 animate-pulse" />
-              Register Now
+              Join Waitlist
               <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
             </span>
           </button>
@@ -183,7 +166,7 @@ export default function Heroes({ onScrollToForm }: HeyellowctionProps) {
             </div>
             <div className="flex items-center gap-2 text-slate-300">
               <CheckCircle2 className="w-4 h-4 text-amber-400" />
-              <span>Fast Payouts</span>
+              <span>Verified System</span>
             </div>
             <div className="flex items-center gap-2 text-slate-300">
               <CheckCircle2 className="w-4 h-4 text-amber-400" />
